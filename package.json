@@ -1,0 +1,21 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "format": "pnpm moon run :format",
+    "lint": "pnpm moon run :lint",
+    "check": "pnpm moon run :check",
+    "sync:hooks": "pnpm moon sync hooks",
+    "sync:projects": "pnpm moon sync projects"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@commitlint/cli": "^19.4.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@moonrepo/cli": "^1.27.6"
+  },
+  "packageManager": "pnpm@9.5.0",
+  "engines": {
+    "node": "~20.16"
+  }
+}

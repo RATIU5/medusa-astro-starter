@@ -1,0 +1,19 @@
+FROM node:20-alpine as builder
+
+WORKDIR /app/storefront
+
+COPY . . 
+
+RUN rm -rf node_modules
+
+RUN apt-get update
+
+RUN pnpm install
+
+RUN pnpm build
+
+FROM nginx:alpine AS runtime
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 8080
+ENTRYPOINT ["nginx", "-g", "daemon off;"]

@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  backend:
+    build:
+      context: ./packages/medusa
+      dockerfile: Dockerfile
+    container_name: medusa-server
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
+      NODE_ENV: development
+      JWT_SECRET: AdrWWX2qy42VpJWgZTb98kr2Xq8bVsCz
+      COOKIE_SECRET: HmZyHJUqcYegfElN8WWo190oMgFHRzpb
+      PORT: 9000
+
+  postgres:
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: medusa-docker
+
+  storefront:
+    build:
+      context: ./site
+      dockerfile: Dockerfile
+    container_name: medusa-storefront
+    depends_on:
+      - backend
