@@ -1,23 +1,18 @@
-FROM node:20-alpine
+FROM node:alpine-20 as deps
 
 WORKDIR /app/medusa
 
 COPY package.json .
 
-RUN apk update
-
-ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
-
 RUN npm install -g npm@latest
-RUN npm install -g @medusajs/medusa-cli@latest
 
-RUN npm install --loglevel=error
+FROM node:alpine-20 as build
 
-COPY . .
-RUN ls -a
+WORKDIR /app/medusa
 
-RUN chmod 777 ./develop.sh
-RUN chmod +x ./develop.sh
+# Copy cached node_modules from deps
+COPY --from=deps /app/node_modules /app/node_modules
 
-ENTRYPOINT ["./develop.sh", "develop"]
+RUN npm install -g @medusajs/medusa-cli@preview
+
+COPY . /app
