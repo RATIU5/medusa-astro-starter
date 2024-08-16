@@ -5,23 +5,28 @@ services:
       context: ./packages/medusa
       dockerfile: Dockerfile
     container_name: medusa
+    env_file: .env
+    environment:
+      STORE_CORS: ${STORE_CORS}
+      ADMIN_CORS: ${ADMIN_CORS}
+      AUTH_CORS: ${AUTH_CORS}
+      REDIS_URL: ${REDIS_URL}
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      COOKIE_SECRET: ${COOKIE_SECRET}
     depends_on:
       - postgres
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@postgres:5432/medusa-docker
-      NODE_ENV: development
-      JWT_SECRET: AdrWWX2qy42VpJWgZTb98kr2Xq8bVsCz
-      COOKIE_SECRET: HmZyHJUqcYegfElN8WWo190oMgFHRzpb
-      PORT: 9000
 
   postgres:
     image: postgres:16-alpine
+    hostname: postgres
     ports:
       - "5432:5432"
+    env_file: .env
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: medusa-docker
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
 
   # storefront:
   #   build:

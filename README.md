@@ -43,3 +43,8 @@ Sync VCS hooks (recommended):
 ```bash
 pnpm sync:hooks
 ```
+
+
+
+# TEST:
+- Maybe need to set up SSL for Postgres? https://dev.to/danvixent/how-to-setup-postgresql-with-ssl-inside-a-docker-container-5f3
