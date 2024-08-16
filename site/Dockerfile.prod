@@ -1,19 +1,32 @@
-FROM node:20-alpine as builder
+# Build stage
+FROM node:lts AS build
+WORKDIR /app
 
-WORKDIR /app/storefront
+# Copy package files and install dependencies
+COPY package*.json ./
+RUN npm ci
 
-COPY . . 
+# Copy source files and build the project
+COPY . .
+RUN npm run build
 
-RUN rm -rf node_modules
+# Production stage
+FROM node:lts-alpine
+WORKDIR /app
 
-RUN apt-get update
+# Copy built assets and server files
+COPY --from=build /app/dist ./dist
+COPY --from=build /app/package*.json ./
 
-RUN pnpm install
+# Install only production dependencies
+RUN npm ci --only=production
 
-RUN pnpm build
+# Set environment variables
+ENV HOST=0.0.0.0
+ENV PORT=4321
 
-FROM nginx:alpine AS runtime
-COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
-COPY --from=builder /app/dist /usr/share/nginx/html
-EXPOSE 8080
-ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# Expose the port the app runs on
+EXPOSE 4321
+
+# Run the server
+CMD ["node", "./dist/server/entry.mjs"]

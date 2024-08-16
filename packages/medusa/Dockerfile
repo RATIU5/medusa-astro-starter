@@ -15,7 +15,6 @@ WORKDIR /app
 # Copy cached node_modules from deps
 COPY --from=deps /app/node_modules /app/node_modules
 
-RUN apk add python3
 RUN npm install -g @medusajs/medusa-cli@preview
 
 COPY . /app

@@ -6,6 +6,9 @@ services:
       dockerfile: Dockerfile
     container_name: medusa
     env_file: .env
+    volumes:
+      - ./packages/medusa:/app
+      - /app/node_modules
     environment:
       STORE_CORS: ${STORE_CORS}
       ADMIN_CORS: ${ADMIN_CORS}
@@ -14,10 +17,14 @@ services:
       DATABASE_URL: ${DATABASE_URL}
       JWT_SECRET: ${JWT_SECRET}
       COOKIE_SECRET: ${COOKIE_SECRET}
+    ports:
+      - "9000:9000"
+      - "7001:7001"
     depends_on:
       - postgres
 
   postgres:
+    container_name: postgres
     image: postgres:16-alpine
     hostname: postgres
     ports:
@@ -27,11 +34,25 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
 
-  # storefront:
-  #   build:
-  #     context: ./site
-  #     dockerfile: Dockerfile
-  #   container_name: medusa-storefront
-  #   depends_on:
-  #     - backend
+  storefront:
+    build:
+      context: ./site
+      dockerfile: Dockerfile
+    container_name: astro
+    ports:
+      - "4321:4321"
+    volumes:
+      # mount local source into container
+      - ./site:/app
+      # paths below are ephemeral volumes
+      - /app/.tscache
+      - /app/dist
+      - /app/node_modules
+    depends_on:
+      - backend
+
+volumes:
+  postgres_data:

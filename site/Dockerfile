@@ -1,14 +1,15 @@
+# This file is only suitable to be used during development, not production.
+# It only sets up and installs the packages. 
+# The source will be mounted as a volume by Docker compose.
+
 FROM node:20-alpine
 
-WORKDIR /app/storefront
+WORKDIR /app
 
-COPY . .
+COPY package*.json .
 
-RUN npm install -g pnpm@latest
-RUN pnpm install
-RUN pnpm run build
+RUN npm i --audit=false --fund=false
 
-ENV HOST=0.0.0.0
-ENV PORT=4321
 EXPOSE 4321
-CMD node ./dist/server/entry.mjs
+
+CMD ["npm", "run", "dev"]
