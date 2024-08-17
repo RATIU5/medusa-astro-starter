@@ -78,7 +78,6 @@
 - `make logs-prod`: View logs of all production services.
 - `make status-prod`: Show status of production services.
 - `make restart-prod`: Restart all production services.
-- `make clean-prod`: Remove production containers, images, volumes, and prune unused volumes.
 
 ### Common Commands
 - `make create-admin`: Create initial admin user (works for both environments).
@@ -99,8 +98,7 @@ If you encounter issues:
    ```
 4. For persistent problems, perform a full cleanup:
    ```bash
-   make clean && make up  # For development
-   make clean-prod && make up-prod  # For production
+   make clean && make up  # For development and production
    ```
 
 **Note**: The `clean` and `clean-prod` commands remove project-related containers, images, and volumes. Use `clean-all` with extreme caution as it removes ALL Docker resources system-wide, **including those from other projects**.

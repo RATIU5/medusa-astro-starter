@@ -33,7 +33,11 @@ setup-env:
 # Build and start all services (development)
 up:
 	@if [ -f .env ]; then \
-		export $$(cat .env | xargs) && docker compose up --build -d; \
+		echo "Loading environment variables from .env file"; \
+		set -a; \
+		. ./.env; \
+		set +a; \
+		docker compose up --build -d; \
 	else \
 		echo ".env file not found. Please run 'make setup-env' first."; \
 		exit 1; \
@@ -41,8 +45,16 @@ up:
 
 # Build and start all services (production)
 up-prod:
-	docker compose -f docker-compose.prod.yml up --build -d
-	@echo "Production services are starting. Use 'make logs-prod' to view logs."
+	@if [ -f .env.production ]; then \
+		echo "Loading environment variables from .env.production file"; \
+		set -a; \
+		. ./.env.production; \
+		set +a; \
+		docker compose -f docker-compose.prod.yml up --build -d; \
+	else \
+		echo ".env.production file not found. Please run 'make setup-env' first."; \
+		exit 1; \
+	fi
 
 # Stop all services (development)
 down:
@@ -68,7 +80,7 @@ restart:
 restart-prod:
 	docker compose -f docker-compose.prod.yml restart
 
-# Clean up containers, volumes, and images (development)
+# Clean up containers, volumes, and images (works for both dev and prod)
 clean:
 	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
 		./$(SCRIPT_NAME) clean; \
@@ -85,13 +97,6 @@ clean-all:
 		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
 		exit 1; \
 	fi
-
-# Clean up containers, volumes, and images (production)
-clean-prod:
-	@echo "Are you sure you want to remove all project-related containers, images, and volumes? [y/N] " && read ans && [ $${ans:-N} = y ]
-	docker compose -f docker-compose.prod.yml down -v --rmi all
-	docker volume ls -q -f name=$(COMPOSE_PROJECT_NAME)_ | xargs -r docker volume rm
-	docker volume prune -f
 
 # Create initial admin user (works for both dev and prod)
 create-admin:
@@ -145,4 +150,4 @@ rename-project:
 		exit 1; \
 	fi
 
-.PHONY: setup-env up up-prod down down-prod logs logs-prod restart restart-prod clean clean-all clean-prod create-admin status status-prod list-resources list-volumes rename-project
+.PHONY: setup-env up up-prod down down-prod logs logs-prod restart restart-prod clean clean-all create-admin status status-prod list-resources list-volumes rename-project
