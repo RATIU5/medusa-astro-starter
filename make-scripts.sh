@@ -127,15 +127,17 @@ clean() {
 
 # Function to clean up everything (including all volumes)
 clean_all() {
-    echo "This will remove ALL containers, images, and volumes, including the PostgreSQL data. Are you really sure? [y/N]"
+    echo "This will remove ALL containers, images, and volumes. Are you really sure? [y/N]"
     read -r ans
     if [[ "${ans:-N}" = y ]]; then
-        docker compose down -v --rmi all --remove-orphans
-        docker volume ls -q -f name="${COMPOSE_PROJECT_NAME}_" | xargs -r docker volume rm
+        docker compose down -v --rmi all
+        docker container prune -f
+        docker volume rm $(docker volume ls -q -f name="${COMPOSE_PROJECT_NAME}_") 2>/dev/null || true
+        docker volume ls -q | xargs -r docker volume rm
         docker system prune -af --volumes
-        echo "All docker resources have been removed."
     fi
 }
+
 # Function to create initial admin user
 create_admin() {
     if [[ -z "$(docker ps -q -f name=medusa)" ]]; then
@@ -146,7 +148,9 @@ create_admin() {
         echo "ADMIN_EMAIL and ADMIN_PASSWORD must be set in the .env file."
         exit 1
     fi
-    docker exec -it $(docker ps -qf "name=medusa") medusa user --email "${ADMIN_EMAIL}" --password "${ADMIN_PASSWORD}"
+    echo "Creating admin user..."
+    docker exec -i medusa /bin/sh -c "medusa user --email '${ADMIN_EMAIL}' --password '${ADMIN_PASSWORD}'"
+    echo "Admin user creation attempt completed."
 }
 
 # Main execution

@@ -34,7 +34,7 @@ services:
       dockerfile: Dockerfile
     image: ${COMPOSE_PROJECT_NAME}_postgres:16-alpine
     hostname: postgres
-    container_name: ${COMPOSE_PROJECT_NAME}_postgres
+    container_name: postgres
     env_file: .env.production
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
