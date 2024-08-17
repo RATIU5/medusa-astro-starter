@@ -11,7 +11,7 @@
 1. Clone the repository:
     ```bash
     git clone https://github.com/RATIU5/medusa-astro-starter.git
-    cd test-medusa
+    cd medusa-astro-starter
     ```
 
 2. Set up environment files:
