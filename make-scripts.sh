@@ -61,20 +61,20 @@ rename_project() {
     local old_name="changeme"
     local new_name="$1"
     local script_name=$(basename "$0")
-
     if [[ -z "$new_name" ]]; then
         echo "Error: New project name not provided."
         echo "Usage: $0 rename <new_project_name>"
         exit 1
     fi
-
     if [[ "$new_name" == *" "* ]]; then
         echo "Error: Project name cannot contain spaces."
         exit 1
     fi
-
     # Perform the renaming
     find . -type f \( -not -path '*/\.*' -o -name '.env' \) \
+           -not -path '*/node_modules/*' \
+           -not -path '*/dist/*' \
+           -not -path '*/build/*' \
            -not -name '.env.example' \
            -not -name "$script_name" \
            -not -name '.gitignore' | while read -r file; do
@@ -90,7 +90,6 @@ rename_project() {
             echo "Updated: $file"
         fi
     done
-
     echo "Project renamed from '$old_name' to '$new_name' in all relevant files."
     echo "Note: The directory name itself was not changed. You may want to rename it manually if desired."
 }

@@ -24,7 +24,7 @@
     ```bash
     make rename-project
     ```
-    When prompted, enter your desired project name. This command will replace all instances of `changeme` in the project with your specified name.
+    When prompted, enter your desired project name. This command will replace all instances of `testproject` in the project with your specified name.
 
 4. Build and start the development environment:
    ```bash
@@ -63,7 +63,7 @@
 ## Command Reference
 
 ### Development Commands
-- `make rename-project`: Rename all instances of `changeme` in the project to your specified project name (excluding .env.example).
+- `make rename-project`: Rename all instances of `testproject` in the project to your specified project name (excluding .env.example).
 - `make setup-env`: Create `.env` and `.env.production` files from the template. Does not overwrite existing files.
 - `make up`: Build and start all development services.
 - `make down`: Stop all development services.
