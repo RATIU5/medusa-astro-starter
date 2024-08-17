@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "changeme",
   "private": true,
   "scripts": {
     "format": "pnpm moon run :format",

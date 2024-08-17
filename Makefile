@@ -1,15 +1,43 @@
-include .env
+# Conditionally include .env file if it exists
+ifneq (,$(wildcard .env))
+    include .env
+    export
+endif
+
+# Default values for environment variables
+COMPOSE_PROJECT_NAME ?= changeme
+
+# Define the script name
+SCRIPT_NAME := make-scripts.sh
+
+# Check if the script exists and is executable
+SCRIPT_CHECK := $(shell if [ -f "./$(SCRIPT_NAME)" ] && [ -x "./$(SCRIPT_NAME)" ]; then echo "OK"; elif [ -f "./$(SCRIPT_NAME)" ]; then echo "NOT_EXECUTABLE"; else echo "NOT_FOUND"; fi)
+
+# Function to check script status before running
+define check_script
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		./$(SCRIPT_NAME) $(1); \
+	elif [ "$(SCRIPT_CHECK)" = "NOT_EXECUTABLE" ]; then \
+		echo "Error: $(SCRIPT_NAME) is not executable. Run 'chmod +x $(SCRIPT_NAME)' to fix this."; \
+		exit 1; \
+	else \
+		echo "Error: $(SCRIPT_NAME) not found. Please ensure the file exists in the project directory."; \
+		exit 1; \
+	fi
+endef
 
 # Setup environment files
 setup-env:
-	cp .env.example .env
-	cp .env.example .env.production
-	@echo "Environment files created. Please update .env and .env.production with your specific settings."
+	$(call check_script,setup-env)
 
 # Build and start all services (development)
 up:
-	docker compose up --build -d
-	@echo "All services are starting. Use 'make logs' to view logs."
+	@if [ -f .env ]; then \
+		export $$(cat .env | xargs) && docker compose up --build -d; \
+	else \
+		echo ".env file not found. Please run 'make setup-env' first."; \
+		exit 1; \
+	fi
 
 # Build and start all services (production)
 up-prod:
@@ -42,18 +70,21 @@ restart-prod:
 
 # Clean up containers, volumes, and images (development)
 clean:
-	@echo "Are you sure you want to remove all project-related containers, images, and volumes? [y/N] " && read ans && [ $${ans:-N} = y ]
-	docker compose down -v --rmi all
-	docker volume ls -q -f name=$(COMPOSE_PROJECT_NAME)_ | xargs -r docker volume rm
-	docker volume prune -f
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		./$(SCRIPT_NAME) clean; \
+	else \
+		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
+		exit 1; \
+	fi
 
+# Clean up everything
 clean-all:
-	@echo "This will remove ALL containers, images, and volumes. Are you really sure? [y/N] " && read ans && [ $${ans:-N} = y ]
-	docker compose down -v --rmi all
-	docker container prune -f
-	docker volume rm $$(docker volume ls -q -f name=$(COMPOSE_PROJECT_NAME)_) 2>/dev/null || true
-	docker volume ls -q | xargs -r docker volume rm
-	docker system prune -af --volumes
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		./$(SCRIPT_NAME) clean-all; \
+	else \
+		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
+		exit 1; \
+	fi
 
 # Clean up containers, volumes, and images (production)
 clean-prod:
@@ -64,11 +95,12 @@ clean-prod:
 
 # Create initial admin user (works for both dev and prod)
 create-admin:
-	@if [ -z "$$(docker ps -q -f name=medusa)" ]; then \
-		echo "Medusa container is not running. Please start it first."; \
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		./$(SCRIPT_NAME) create-admin; \
+	else \
+		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
 		exit 1; \
 	fi
-	docker exec -it $$(docker ps -qf "name=medusa") medusa user --email ${ADMIN_EMAIL} --password ${ADMIN_PASSWORD}
 
 # Show status of services (development)
 status:
@@ -97,12 +129,20 @@ list-volumes:
 	done
 
 rename-project:
-	@if grep -q "changeme" $$(find . -type f -not -path '*/\.*' -not -name '.env.example'); then \
-		echo "Enter the new project name: " && read project_name; \
-		find . -type f -not -path '*/\.*' -not -name '.env.example' -exec sed -i'' -e "s/changeme/$$project_name/g" {} +; \
-		echo "Project renamed from 'changeme' to '$$project_name'. Note: .env.example was not modified."; \
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		read -p "Enter the new project name (no spaces allowed): " project_name; \
+		if echo "$$project_name" | grep -q " "; then \
+			echo "Error: Project name cannot contain spaces. Please try again."; \
+			exit 1; \
+		else \
+			./$(SCRIPT_NAME) rename "$$project_name"; \
+		fi \
+	elif [ "$(SCRIPT_CHECK)" = "NOT_EXECUTABLE" ]; then \
+		echo "Error: $(SCRIPT_NAME) is not executable. Run 'chmod +x $(SCRIPT_NAME)' to fix this."; \
+		exit 1; \
 	else \
-		echo "No instances of 'changeme' found (excluding .env.example). The project may have already been renamed."; \
+		echo "Error: $(SCRIPT_NAME) not found. Please ensure the file exists in the project directory."; \
+		exit 1; \
 	fi
 
 .PHONY: setup-env up up-prod down down-prod logs logs-prod restart restart-prod clean clean-all clean-prod create-admin status status-prod list-resources list-volumes rename-project

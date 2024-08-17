@@ -14,17 +14,17 @@
     cd test-medusa
     ```
 
-2. Rename the project (recommended):
-    ```bash
-    make rename-project
-    ```
-    When prompted, enter your desired project name. This command will replace all instances of `changeme` in the project with your specified name.
-
-3. Set up environment files:
+2. Set up environment files:
     ```bash
     make setup-env
     ```
    Update the created `.env` file with your development settings.
+
+3. Rename the project (recommended):
+    ```bash
+    make rename-project
+    ```
+    When prompted, enter your desired project name. This command will replace all instances of `changeme` in the project with your specified name.
 
 4. Build and start the development environment:
    ```bash
