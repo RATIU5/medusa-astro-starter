@@ -5,7 +5,7 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-# Function to set up environment files
+# Function to set up environment files and dependencies
 setup_env() {
     if [[ ! -f .env ]]; then
         if [[ -f .env.example ]]; then
@@ -30,6 +30,30 @@ setup_env() {
     else
         echo ".env.production file already exists. Skipping creation."
     fi
+
+    # Check for Node.js
+    if ! command_exists node; then
+        echo "Error: Node.js is not installed. Please install Node.js before continuing."
+        exit 1
+    fi
+
+    # Check for pnpm
+    if ! command_exists pnpm; then
+        echo "pnpm not found. Installing pnpm globally..."
+        if ! npm install -g pnpm; then
+            echo "Error: Failed to install pnpm. Please install it manually and run this script again."
+            exit 1
+        fi
+    fi
+
+    # Run pnpm install
+    echo "Running pnpm install..."
+    if ! pnpm install; then
+        echo "Error: pnpm install failed. Please check your package.json and try again."
+        exit 1
+    fi
+
+    echo "Environment setup complete."
 }
 
 # Function to rename the project
