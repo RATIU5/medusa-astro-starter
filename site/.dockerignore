@@ -1,3 +1,31 @@
+# OS generated files
 .DS_Store
+
+# Dependencies
 node_modules
+
+# Editor directories and files
 .vscode
+.idea
+
+# Build output
+dist
+.astro
+
+# Cache
+.tscache
+.cache
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Optional: Version control
+.git
+.gitignore
