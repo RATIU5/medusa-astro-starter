@@ -31,9 +31,11 @@ services:
       start_period: 30s
 
   postgres:
-    image: postgres:16-alpine
+    build:
+      context: ./postgres
+      dockerfile: Dockerfile
     hostname: postgres
-    container_name: postgres
+    container_name: ${COMPOSE_PROJECT_NAME}-postgres
     ports:
       - "5432:5432"
     env_file: .env

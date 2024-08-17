@@ -1,4 +1,4 @@
-# changeme
+# test-medusa
 
 ## Requirements
 - [OrbStack](https://orbstack.dev/) (recommended) or [Docker Desktop](https://www.docker.com/products/docker-desktop/)
@@ -39,6 +39,8 @@
    - Backend: [http://localhost:9000/app](http://localhost:9000/app)
    - Storefront: [http://localhost:4321](http://localhost:4321)
 
+**Note**: If you find yourself starting and stopping the development environment frequently, consider running the `make clean-preserve-db` command to remove development containers and images while preserving the database volume.
+
 ### Production Environment
 
 1. Set up environment files (if not done already):
@@ -70,6 +72,7 @@
 - `make status`: Show status of development services.
 - `make restart`: Restart all development services.
 - `make clean`: Remove development containers, images, volumes, and prune unused volumes.
+- `make clean-preserve-db`: Remove development containers, images, and prune unused volumes, but preserve the database volume.
 
 ### Production Commands
 - `make up-prod`: Build and start all production services.

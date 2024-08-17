@@ -96,28 +96,46 @@ rename_project() {
 
 # Function to clean up containers, volumes, and images (development)
 clean() {
-    echo "Are you sure you want to remove all project-related containers, images, and volumes? [y/N]"
+    local preserve_db=${1:-false}
+    echo "Are you sure you want to remove project-related containers, images, and volumes? [y/N]"
     read -r ans
     if [[ "${ans:-N}" = y ]]; then
-        docker compose down -v --rmi all
-        docker volume ls -q -f name="${COMPOSE_PROJECT_NAME}_" | xargs -r docker volume rm
-        docker volume prune -f
+        # Stop and remove containers
+        docker compose down --remove-orphans
+
+        # Identify the postgres volume
+        postgres_volume="${COMPOSE_PROJECT_NAME}_postgres_data"
+
+        # Remove volumes
+        if [ "$preserve_db" = true ]; then
+            # Preserve the PostgreSQL volume and remove others
+            echo "Preserving PostgreSQL volume ($postgres_volume) and removing other volumes."
+            docker volume ls -q | grep -v "^$postgres_volume$" | xargs -r docker volume rm
+        else
+            # Remove all volumes including PostgreSQL
+            echo "Removing all volumes."
+            docker volume rm $(docker volume ls -q)
+        fi
+
+        # Remove all project-specific images
+        echo "Removing all project-specific images."
+        docker images --format "{{.Repository}}:{{.Tag}}" | grep "^${COMPOSE_PROJECT_NAME}" | xargs -r docker rmi
+
+        echo "Cleanup completed."
     fi
 }
 
-# Function to clean up everything
+# Function to clean up everything (including all volumes)
 clean_all() {
-    echo "This will remove ALL containers, images, and volumes. Are you really sure? [y/N]"
+    echo "This will remove ALL containers, images, and volumes, including the PostgreSQL data. Are you really sure? [y/N]"
     read -r ans
     if [[ "${ans:-N}" = y ]]; then
-        docker compose down -v --rmi all
-        docker container prune -f
-        docker volume rm $(docker volume ls -q -f name="${COMPOSE_PROJECT_NAME}_") 2>/dev/null || true
-        docker volume ls -q | xargs -r docker volume rm
+        docker compose down -v --rmi all --remove-orphans
+        docker volume ls -q -f name="${COMPOSE_PROJECT_NAME}_" | xargs -r docker volume rm
         docker system prune -af --volumes
+        echo "All docker resources have been removed."
     fi
 }
-
 # Function to create initial admin user
 create_admin() {
     if [[ -z "$(docker ps -q -f name=medusa)" ]]; then
@@ -140,7 +158,10 @@ case "$1" in
         rename_project "$2"
         ;;
     clean)
-        clean
+        clean false
+        ;;
+    clean-preserve-db)
+        clean true
         ;;
     clean-all)
         clean_all
@@ -149,11 +170,12 @@ case "$1" in
         create_admin
         ;;
     *)
-        echo "Usage: $0 {setup-env|rename|clean|clean-all|create-admin} [args]"
+        echo "Usage: $0 {setup-env|rename|clean|clean-preserve-db|clean-all|create-admin} [args]"
         echo "  setup-env                  : Set up environment files"
         echo "  rename <new_project_name>  : Rename the project"
         echo "  clean                      : Clean up development resources"
-        echo "  clean-all                  : Clean up all Docker resources"
+        echo "  clean-preserve-db          : Clean up resources but preserve the PostgreSQL volume"
+        echo "  clean-all                  : Clean up all Docker resources (including PostgreSQL data)"
         echo "  create-admin               : Create initial admin user"
         exit 1
         ;;

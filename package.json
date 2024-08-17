@@ -1,5 +1,5 @@
 {
-  "name": "changeme",
+  "name": "test-medusa",
   "private": true,
   "scripts": {
     "format": "pnpm moon run :format",

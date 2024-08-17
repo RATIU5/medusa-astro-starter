@@ -5,7 +5,7 @@ ifneq (,$(wildcard .env))
 endif
 
 # Default values for environment variables
-COMPOSE_PROJECT_NAME ?= changeme
+COMPOSE_PROJECT_NAME ?= test-medusa
 
 # Define the script name
 SCRIPT_NAME := make-scripts.sh
@@ -80,7 +80,7 @@ restart:
 restart-prod:
 	docker compose -f docker-compose.prod.yml restart
 
-# Clean up containers, volumes, and images (works for both dev and prod)
+# Clean up containers, volumes, and images (development)
 clean:
 	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
 		./$(SCRIPT_NAME) clean; \
@@ -89,7 +89,16 @@ clean:
 		exit 1; \
 	fi
 
-# Clean up everything
+# Clean up while preserving the database
+clean-preserve-db:
+	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
+		./$(SCRIPT_NAME) clean-preserve-db; \
+	else \
+		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
+		exit 1; \
+	fi
+
+# Clean up everything (including all volumes)
 clean-all:
 	@if [ "$(SCRIPT_CHECK)" = "OK" ]; then \
 		./$(SCRIPT_NAME) clean-all; \
@@ -97,6 +106,12 @@ clean-all:
 		echo "Error: $(SCRIPT_NAME) not found or not executable. Please check the file and its permissions."; \
 		exit 1; \
 	fi
+
+# Add a new target for removing only dangling volumes
+clean-dangling:
+	@echo "Removing dangling volumes..."
+	@docker volume ls -qf dangling=true | xargs -r docker volume rm
+	@echo "Dangling volumes removed."
 
 # Create initial admin user (works for both dev and prod)
 create-admin:
@@ -150,4 +165,4 @@ rename-project:
 		exit 1; \
 	fi
 
-.PHONY: setup-env up up-prod down down-prod logs logs-prod restart restart-prod clean clean-all create-admin status status-prod list-resources list-volumes rename-project
+.PHONY: setup-env up up-prod down down-prod logs logs-prod restart restart-prod clean clean-preserve-db clean-all create-admin status status-prod list-resources list-volumes rename-project clean-dangling
