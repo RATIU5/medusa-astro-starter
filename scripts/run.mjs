@@ -46,6 +46,15 @@ const run = async (command, ...args) => {
 };
 
 /**
+ * Determine whether the setup is complete by checking for the presence of a .env file
+ * @returns {boolean} Whether the setup is complete
+ */
+function isSetupComplete() {
+  const envPath = join(process.cwd(), ".env");
+  return fs.existsSync(envPath);
+}
+
+/**
  * Get Docker volumes
  * @param {string} [prefix=''] - Optional prefix for volume names
  * @returns {Promise<string[]>} List of volume names
@@ -453,6 +462,14 @@ const main = async () => {
 
   try {
     const command = args[0];
+
+    if (!["help", "check", "setup"].includes(command) && !isSetupComplete()) {
+      console.error(
+        "Error: Project setup has not been completed. Please run 'pnpm run:setup <project-name>' first."
+      );
+      process.exit(1);
+    }
+
     switch (command) {
       case "help":
         showHelp();
