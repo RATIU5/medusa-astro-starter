@@ -3,20 +3,21 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "npx only-allow pnpm && node ./scripts/run.mjs check",
-    "initial:check": "node ./scripts/run.mjs check",
-    "initial:setup": "node ./scripts/run.mjs setup",
-    "db:start": "docker-compose up -d",
-    "db:stop": "docker-compose down -v",
+    "preinstall": "npx only-allow pnpm && pnpm run:check",
+    "run:check": "node ./scripts/run.mjs check",
+    "run:setup": "node ./scripts/run.mjs setup",
+    "db:start": "docker compose up -d",
+    "db:stop": "docker compose down -v",
     "format": "pnpm moon run :format",
-    "lint": "pnpm moon run :lint",
-    "check": "pnpm moon run :check"
+    "check": "pnpm moon run :check",
+    "lint": "pnpm moon run :lint"
   },
   "devDependencies": {
     "@moonrepo/cli": "^1.27.6"
   },
   "packageManager": "pnpm@9.5.0",
   "engines": {
-    "node": "~20.16"
+    "node": "~20.16",
+    "docker": "~26.1"
   }
 }

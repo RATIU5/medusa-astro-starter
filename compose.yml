@@ -4,7 +4,7 @@ services:
     build:
       context: ./.docker/postgres
       dockerfile: Dockerfile
-    image: postgres:changemename
+    image: postgres:${COMPOSE_PROJECT_NAME}
     container_name: postgres
     ports:
       - "5432:5432"
@@ -20,7 +20,7 @@ services:
     build:
       context: ./.docker/redis
       dockerfile: Dockerfile
-    image: redis:changemename
+    image: redis:${COMPOSE_PROJECT_NAME}
     container_name: cache
     expose:
       - 6379
