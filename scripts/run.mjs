@@ -1,5 +1,5 @@
 import { spawn } from "node:child_process";
-import { resolve, join, relative } from "node:path";
+import { resolve, join, relative, dirname, basename } from "node:path";
 import fs from "node:fs";
 import crypto from "node:crypto";
 import readline from "node:readline/promises";
@@ -293,7 +293,6 @@ Examples of valid names:
 
   const filesToIgnore = [
     "pnpm-lock.yaml",
-    ".env.example",
     ".gitignore",
     "pnpm-workspace.yaml",
     "yarn.lock",
@@ -301,13 +300,11 @@ Examples of valid names:
   ];
   const dirsToIgnore = [
     "node_modules",
-    "packages",
     "dist",
     "build",
     ".git",
     ".vscode",
     ".docker",
-    "scripts",
   ];
 
   const rootDir = process.cwd();
@@ -324,30 +321,39 @@ Examples of valid names:
       dirsToIgnore
     );
 
-    const envExamplePath = join(rootDir, ".env.example");
-    const envPath = join(rootDir, ".env");
-    const envProdPath = join(rootDir, ".env.production");
-    if (fs.existsSync(envExamplePath)) {
-      if (!fs.existsSync(envPath)) {
-        fs.copyFileSync(envExamplePath, envPath);
-        renameInFile(envPath, "changemesecret", "", generateSecret);
-        console.log(
-          "created .env file; please update it with your configurations"
-        );
-      }
-      if (!fs.existsSync(envProdPath)) {
-        fs.copyFileSync(envExamplePath, envProdPath);
-        renameInFile(envProdPath, "changemesecret", "", generateSecret);
-        console.log(
-          "created .env.production file; please update it with your configurations"
-        );
-      }
-    }
+    // Find all .env.example files and create corresponding .env and .env.production files
+    traverseDirectory(
+      rootDir,
+      rootDir,
+      (filePath, relativePath) => {
+        if (basename(filePath) === ".env.example") {
+          const dirPath = dirname(filePath);
+          const envPath = join(dirPath, ".env");
+          const envProdPath = join(dirPath, ".env.production");
+
+          if (!fs.existsSync(envPath)) {
+            fs.copyFileSync(filePath, envPath);
+            renameInFile(envPath, "changemename", newProjectName);
+            renameInFile(envPath, "changemesecret", "", generateSecret);
+            console.log(`Created .env file in ${relativePath}`);
+          }
+
+          if (!fs.existsSync(envProdPath)) {
+            fs.copyFileSync(filePath, envProdPath);
+            renameInFile(envProdPath, "changemename", newProjectName);
+            renameInFile(envProdPath, "changemesecret", "", generateSecret);
+            console.log(`Created .env.production file in ${relativePath}`);
+          }
+        }
+      },
+      filesToIgnore,
+      dirsToIgnore
+    );
   } catch (err) {
     console.error("Error:", err);
   }
 
-  console.log("project setup complete");
+  console.log("Project setup complete");
 }
 
 /**
