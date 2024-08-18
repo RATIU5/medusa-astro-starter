@@ -27,6 +27,7 @@ module.exports = defineConfig({
 				ssl: false,
 			},
 		},
+
 		http: {
 			storeCors: STORE_CORS,
 			adminCors: ADMIN_CORS,

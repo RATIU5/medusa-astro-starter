@@ -5,7 +5,7 @@ ifneq (,$(wildcard .env))
 endif
 
 # Default values for environment variables
-COMPOSE_PROJECT_NAME ?= test-medusa
+COMPOSE_PROJECT_NAME ?= changeme
 
 # Define the script name
 SCRIPT_NAME := make-scripts.sh

@@ -1,8 +1,10 @@
-# test-medusa
+# changeme
 
 ## Requirements
 - [OrbStack](https://orbstack.dev/) (recommended) or [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [Make](https://www.gnu.org/software/make/)
+- Node.js 20.x
+- pnpm (install with `npm install -g pnpm`)
 
 ## Getting Started
 
@@ -23,7 +25,7 @@
     ```bash
     make rename-project
     ```
-    When prompted, enter your desired project name. This command will replace all instances of `testproject` in the project with your specified name.
+    When prompted, enter your desired project name.
 
 4. Build and start the development environment:
    ```bash
@@ -60,6 +62,14 @@
    ```
 
 4. Access the production application (URLs depend on your deployment configuration).
+
+### Store Configuration
+
+Access the Medusa admin interface at [http://localhost:9000/app](http://localhost:9000/app). Login with the credentials you created in step 5 of the development environment setup.
+
+To start configuring your store, you will first need to configure the store currencies. Navigate to [http://localhost:9000/app/settings/store](http://localhost:9000/app/settings/store) and add the currencies you wish to use in your store. Make sure you set the default currency as well.
+
+Next, we need to [install a Payment Processor](https://docs.medusajs.com/troubleshooting/missing-payment-providers). This is a requirement to add regions. To add a Payment Processor, open up the [medusa config file](./packages/medusa/medusa-config.js).
 
 ## Command Reference
 
