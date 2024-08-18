@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { resolve, join, relative } from "node:path";
 import fs from "node:fs";
+import crypto from "node:crypto";
 
 /**
  * Run a command and return the output
@@ -34,6 +35,75 @@ const run = async (command, ...args) => {
     });
   });
 };
+
+/**
+ * Generate a random secret that is 32 bytes long
+ * @returns {string} A random secret
+ */
+function generateSecret() {
+  const buffer = crypto.randomBytes(32);
+  return buffer.toString("hex");
+}
+
+/**
+ * Rename all instances of `oldName` to `newName` in the file at `filePath`.
+ * If a `generator` function is provided, it will be called for each match
+ * and the return value will be used as the replacement.
+ * @param {string} filePath
+ * @param {string} oldName
+ * @param {string} newName
+ * @param {() => string | null} generator
+ */
+function renameInFile(filePath, oldName, newName, generator = null) {
+  let content = fs.readFileSync(filePath, "utf8");
+  content = content.replace(new RegExp(oldName, "g"), (match) => {
+    if (generator && typeof generator === "function") {
+      return generator();
+    }
+    return newName;
+  });
+  fs.writeFileSync(filePath, content, "utf8");
+}
+
+/**
+ * Traverse the directory and call the `operation` function on each file not in the `filesToIgnore` array or the `dirsToIgnore` array
+ * @param {string} dir The directory to traverse
+ * @param {string} rootDir The root directory of the project
+ * @param {() => void} operation The operation to perform on each file
+ * @param {string[]} filesToIgnore The files to ignore
+ * @param {string[]} dirsToIgnore The directories to ignore
+ */
+function traverseDirectory(
+  dir,
+  rootDir,
+  operation,
+  filesToIgnore = [],
+  dirsToIgnore = []
+) {
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+
+  for (const entry of entries) {
+    const fullPath = join(dir, entry.name);
+    const relativePath = relative(rootDir, fullPath);
+
+    if (entry.isDirectory()) {
+      if (
+        !dirsToIgnore.includes(entry.name) &&
+        !dirsToIgnore.includes(relativePath)
+      ) {
+        traverseDirectory(
+          fullPath,
+          rootDir,
+          operation,
+          filesToIgnore,
+          dirsToIgnore
+        );
+      }
+    } else if (!filesToIgnore.includes(entry.name)) {
+      operation(fullPath, relativePath, entry);
+    }
+  }
+}
 
 /**
  * Print the help message to the console
@@ -142,6 +212,12 @@ async function checkToolVersions() {
   }
 }
 
+/**
+ * Setup the project for the first time
+ * This will rename all instances of "changemename" to the new project name
+ * and create the .env and .env.production files
+ * @param {string} newProjectName
+ */
 async function firstSetup(newProjectName) {
   const namePattern =
     /^(?:(?:@(?:[a-z0-9-*~][a-z0-9-*._~]*)?\/[a-z0-9-._~])|[a-z0-9-~])[a-z0-9-._~]*$/;
@@ -188,36 +264,41 @@ Examples of valid names:
   const rootDir = process.cwd();
 
   try {
-    await traverseDirectory(rootDir);
+    // Rename all instances of "changemename" to the new project name
+    traverseDirectory(
+      rootDir,
+      rootDir,
+      (filePath) => {
+        renameInFile(filePath, "changemename", newProjectName);
+      },
+      filesToIgnore,
+      dirsToIgnore
+    );
+
+    const envExamplePath = join(rootDir, ".env.example");
+    const envPath = join(rootDir, ".env");
+    const envProdPath = join(rootDir, ".env.production");
+    if (fs.existsSync(envExamplePath)) {
+      if (!fs.existsSync(envPath)) {
+        fs.copyFileSync(envExamplePath, envPath);
+        renameInFile(envPath, "changemesecret", "", generateSecret);
+        console.log(
+          "created .env file; please update it with your configurations"
+        );
+      }
+      if (!fs.existsSync(envProdPath)) {
+        fs.copyFileSync(envExamplePath, envProdPath);
+        renameInFile(envProdPath, "changemesecret", "", generateSecret);
+        console.log(
+          "created .env.production file; please update it with your configurations"
+        );
+      }
+    }
   } catch (err) {
     console.error("Error:", err);
   }
 
-  async function traverseDirectory(dir) {
-    const entries = fs.readdirSync(dir, { withFileTypes: true });
-
-    for (const entry of entries) {
-      const fullPath = join(dir, entry.name);
-      const relativePath = relative(rootDir, fullPath);
-
-      if (entry.isDirectory()) {
-        if (
-          !dirsToIgnore.includes(entry.name) &&
-          !dirsToIgnore.includes(relativePath)
-        ) {
-          await traverseDirectory(fullPath);
-        }
-      } else if (!filesToIgnore.includes(entry.name)) {
-        await renameInFile(fullPath, "changemename", newProjectName);
-      }
-    }
-  }
-
-  async function renameInFile(filePath, oldName, newName) {
-    let content = fs.readFileSync(filePath, "utf8");
-    content = content.replace(new RegExp(oldName, "g"), newName);
-    fs.writeFileSync(filePath, content, "utf8");
-  }
+  console.log("project setup complete");
 }
 
 const main = async () => {
