@@ -157,6 +157,9 @@ Commands:
   help        Show this help message
   check       Check the project to verify it's setup correctly
   setup       Setup the project for the first time
+  clean []    Clean up containers, volumes, and images (development)
+              [--preserve-db]  Preserve the database volume
+  clean:all   Clean up everything (including all volumes)
   `);
 }
 
@@ -201,7 +204,12 @@ async function checkToolVersions() {
         }`
       );
     }
+  } catch (error) {
+    console.error("error: node is not installed");
+    process.exit(1);
+  }
 
+  try {
     const pnpmVersion = (await run("pnpm", "--version")).trim().split(".");
     const [pnpmMajor, pnpmMinor] = pnpmVersion;
     if (
@@ -222,7 +230,12 @@ async function checkToolVersions() {
         }`
       );
     }
+  } catch (error) {
+    console.error("error: pnpm is not installed");
+    process.exit(1);
+  }
 
+  try {
     const dockerVersion = (await run("docker", "--version"))
       .trim()
       .split(" ")[2]
@@ -243,11 +256,7 @@ async function checkToolVersions() {
       );
     }
   } catch (error) {
-    if (error instanceof Error) {
-      console.error(error.message);
-    } else {
-      console.error("error: unknown error occurred");
-    }
+    console.error("error: docker is not installed");
     process.exit(1);
   }
 }
@@ -388,7 +397,7 @@ async function clean(preserveDb = false) {
     } catch (error) {
       console.error("error during cleanup:", error);
     } finally {
-      rl.close(); // Close the readline interface
+      rl.close();
     }
   }
 }
@@ -423,7 +432,7 @@ async function cleanAll() {
     } catch (error) {
       console.error("error during full cleanup:", error);
     } finally {
-      rl.close(); // Close the readline interface
+      rl.close();
     }
   }
 }

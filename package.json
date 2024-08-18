@@ -7,20 +7,28 @@
     "run:check": "node ./scripts/run.mjs check",
     "run:setup": "node ./scripts/run.mjs setup",
     "db:start": "docker compose up -d",
-    "db:stop": "docker compose down -v",
+    "db:stop": "docker compose down",
+    "db:logs": "docker compose logs -f",
     "db:clean": "node ./scripts/run.mjs clean",
     "db:clean:preserve": "node ./scripts/run.mjs clean --preserve-db",
     "db:clean:all": "node ./scripts/run.mjs clean:all",
     "format": "pnpm moon run :format",
     "check": "pnpm moon run :check",
-    "lint": "pnpm moon run :lint"
+    "lint": "pnpm moon run :lint",
+    "dev": "pnpm moon run :dev",
+    "build": "pnpm moon run :build",
+    "start": "pnpm moon run :start"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@moonrepo/cli": "^1.27.6"
   },
   "packageManager": "pnpm@9.5.0",
   "engines": {
     "node": "~20.16",
     "docker": "~26.1"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   }
 }

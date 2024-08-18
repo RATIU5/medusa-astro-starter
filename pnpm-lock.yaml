@@ -12,6 +12,9 @@ importers:
         specifier: ^16.4.5
         version: 16.4.5
     devDependencies:
+      '@biomejs/biome':
+        specifier: 1.8.3
+        version: 1.8.3
       '@moonrepo/cli':
         specifier: ^1.27.6
         version: 1.27.6
@@ -20,95 +23,95 @@ importers:
     dependencies:
       '@medusajs/api-key':
         specifier: preview
-        version: 0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/auth':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/auth-emailpass':
         specifier: preview
-        version: 0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/cache-inmemory':
         specifier: preview
-        version: 1.8.11-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 1.8.11-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/cart':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/currency':
         specifier: preview
-        version: 0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/customer':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/event-bus-local':
         specifier: preview
-        version: 1.9.9-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 1.9.9-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/file':
         specifier: preview
-        version: 0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/file-local-next':
         specifier: preview
-        version: 0.0.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/fulfillment':
         specifier: preview
-        version: 0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/fulfillment-manual':
         specifier: preview
-        version: 0.0.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/inventory-next':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/medusa':
         specifier: preview
-        version: 1.20.6-preview-20240818060534(@babel/runtime@7.25.0)(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(@types/react@18.3.3)(pg@8.11.3)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)
+        version: 1.20.6-preview-20240818180500(@babel/runtime@7.25.0)(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(@types/react@18.3.3)(pg@8.11.3)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)
       '@medusajs/notification':
         specifier: preview
-        version: 0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/notification-local':
         specifier: preview
-        version: 0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/order':
         specifier: preview
-        version: 0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/payment':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/pricing':
         specifier: preview
-        version: 0.1.13-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.13-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/product':
         specifier: preview
-        version: 0.3.13-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.3.13-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/promotion':
         specifier: preview
-        version: 0.0.5-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.5-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/region':
         specifier: preview
-        version: 0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/sales-channel':
         specifier: preview
-        version: 0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/stock-location-next':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/store':
         specifier: preview
-        version: 0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/tax':
         specifier: preview
-        version: 0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/user':
         specifier: preview
-        version: 0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@medusajs/workflow-engine-inmemory':
         specifier: preview
-        version: 0.0.5-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+        version: 0.0.5-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       express:
         specifier: ^4.17.2
         version: 4.19.2
     devDependencies:
       '@medusajs/medusa-cli':
         specifier: preview
-        version: 1.3.23-preview-20240818060534(@types/node@17.0.45)
+        version: 1.3.23-preview-20240818180500(@types/node@17.0.45)
       '@mikro-orm/cli':
         specifier: 5.9.7
         version: 5.9.7(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@mikro-orm/postgresql@5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7))(pg@8.11.3)
@@ -355,6 +358,59 @@ packages:
   '@babel/types@7.25.2':
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
+
+  '@biomejs/biome@1.8.3':
+    resolution: {integrity: sha512-/uUV3MV+vyAczO+vKrPdOW0Iaet7UnJMU4bNMinggGJTAnBPjCoLEYcyYtYHNnUNYlv4xZMH6hVIQCAozq8d5w==}
+    engines: {node: '>=14.21.3'}
+    hasBin: true
+
+  '@biomejs/cli-darwin-arm64@1.8.3':
+    resolution: {integrity: sha512-9DYOjclFpKrH/m1Oz75SSExR8VKvNSSsLnVIqdnKexj6NwmiMlKk94Wa1kZEdv6MCOHGHgyyoV57Cw8WzL5n3A==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [darwin]
+
+  '@biomejs/cli-darwin-x64@1.8.3':
+    resolution: {integrity: sha512-UeW44L/AtbmOF7KXLCoM+9PSgPo0IDcyEUfIoOXYeANaNXXf9mLUwV1GeF2OWjyic5zj6CnAJ9uzk2LT3v/wAw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [darwin]
+
+  '@biomejs/cli-linux-arm64-musl@1.8.3':
+    resolution: {integrity: sha512-9yjUfOFN7wrYsXt/T/gEWfvVxKlnh3yBpnScw98IF+oOeCYb5/b/+K7YNqKROV2i1DlMjg9g/EcN9wvj+NkMuQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-arm64@1.8.3':
+    resolution: {integrity: sha512-fed2ji8s+I/m8upWpTJGanqiJ0rnlHOK3DdxsyVLZQ8ClY6qLuPc9uehCREBifRJLl/iJyQpHIRufLDeotsPtw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64-musl@1.8.3':
+    resolution: {integrity: sha512-UHrGJX7PrKMKzPGoEsooKC9jXJMa28TUSMjcIlbDnIO4EAavCoVmNQaIuUSH0Ls2mpGMwUIf+aZJv657zfWWjA==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-linux-x64@1.8.3':
+    resolution: {integrity: sha512-I8G2QmuE1teISyT8ie1HXsjFRz9L1m5n83U1O6m30Kw+kPMPSKjag6QGUn+sXT8V+XWIZxFFBoTDEDZW2KPDDw==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [linux]
+
+  '@biomejs/cli-win32-arm64@1.8.3':
+    resolution: {integrity: sha512-J+Hu9WvrBevfy06eU1Na0lpc7uR9tibm9maHynLIoAjLZpQU3IW+OKHUtyL8p6/3pT2Ju5t5emReeIS2SAxhkQ==}
+    engines: {node: '>=14.21.3'}
+    cpu: [arm64]
+    os: [win32]
+
+  '@biomejs/cli-win32-x64@1.8.3':
+    resolution: {integrity: sha512-/PJ59vA1pnQeKahemaQf4Nyj7IKUvGQSc3Ze1uIGi+Wvr1xF7rGobSrAAG01T/gUDG21vkDsZYM03NAmPiVkqg==}
+    engines: {node: '>=14.21.3'}
+    cpu: [x64]
+    os: [win32]
 
   '@colors/colors@1.6.0':
     resolution: {integrity: sha512-Ir+AOibqzrIsL6ajt3Rz3LskB7OiMVHqltZmspbW/TJuTVuyOMirVqAkjfY6JISiLHgyNqicAC8AyHHGzNd/dA==}
@@ -794,185 +850,185 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@medusajs/admin-sdk@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-rhiH6TfkzE0j8Lc1XGVqqVHKbD03pRsEVK2xAPqr1Hjp9Uk3yM+ujzYIaLLJ/WEZxOeVj5umqireUmYxns4CDg==}
+  '@medusajs/admin-sdk@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-V+N/KB4VExNyOIBzk2h3B1Pgkp9sZoQfsyU+rCTEHVZn8hnyasM4RmjTsd3VI5875WJLs3Iu0wtoF7+sLQC4qw==}
     peerDependencies:
       express: ^4.18.2
       react-dom: ^18.0.0
 
-  '@medusajs/admin-shared@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-Mrgor9TJTketReGL7YYbayV1ICqobNfr/0Ie5cUxA6I2RHdw1d2qen+WmXPt0Ul8JceFfF1Xuq51jq8dnODYlA==}
+  '@medusajs/admin-shared@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-7cUIlb1ZONzc+BsfjzBFOjnOcBcPWCaBV3hMhlbbvnIXZpaep3BO9gWYga/RWx4ydzgfO7HnlI5tK1BX5jqrvQ==}
 
-  '@medusajs/admin-vite-plugin@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-yKeBYQUPRHimSj9C8k1EMUEHHXmTB/uc0Bzlf9O/SiPHpbyYAAtppDQThODtXlNJK3xBl3Sf4XmAx17oV7Qj7Q==}
+  '@medusajs/admin-vite-plugin@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-3mAr9YNo6lGNIrjWU6L4Xb+0SEPwN+OfyPKY81v66j+xVrhQbmTDBH3dXxBkDJoQ4foQ3NKbPIsUPpcfB4yPvg==}
     peerDependencies:
       vite: ^5.0.0
 
-  '@medusajs/api-key@0.1.3-preview-20240818060534':
-    resolution: {integrity: sha512-1bUk7qeI54QDIE4ihEXUgrn2lnUDk8bwts3GcsseBOFuUE46dB7W/keD+uDGdYbtmCitaV2J6XR5BiQ0988zqw==}
+  '@medusajs/api-key@0.1.3-preview-20240818180500':
+    resolution: {integrity: sha512-6mb02C6tv8BNY/SJ776B6xprYrQU9RPLJrgg5QrWlDeKo87Z6S2Zcj1uxuRCqvFwduMVX+t1Mnf9oZQp60x64Q==}
     engines: {node: '>=20'}
 
-  '@medusajs/auth-emailpass@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-RcgbzDawgVTg2en7Gy6TJV5sOsP3/UB3OLMDED/hXSi2SKFiTtX6s5AWthhxtJTRJYgeb6ksWU8f4OGdOvFKNw==}
+  '@medusajs/auth-emailpass@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-+iaCzakSq4Rxdm436VvBvS5omVe+nb+I9qCFMAE6DocHzf78V4YA11oPkjSErLMhqQqugqVw7YfhKx7xw6rv1g==}
     engines: {node: '>=20'}
 
-  '@medusajs/auth@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-8qowzmv3AIig0ob2m4ID0AM6W7/4yP2KI8uTRvF8jpG7PjP9+wUMAo4UrvzxNQFNwemm5iS1Q8G57itLkVtGyQ==}
+  '@medusajs/auth@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-AUiQdyEDfLwfwlDSdq3IEut/MR2jo02ZcZySo8neft1ie7P3YQUiOPauBXiL6KRIM0qViUrK44l9uLkTHM6Xnw==}
     engines: {node: '>=20'}
 
-  '@medusajs/cache-inmemory@1.8.11-preview-20240818060534':
-    resolution: {integrity: sha512-oZgbJC8K2Y5x4nmeIl/4UF15jKWDVPKUmo50qST3rPVPyQjkPe5DMQ8wC6clLMI/hHyj5XOG4mIurJUC3Gln3A==}
+  '@medusajs/cache-inmemory@1.8.11-preview-20240818180500':
+    resolution: {integrity: sha512-sfNdax3GzRyjafFkNNUwXWsnWQkk/lent23N9AA8Y2LsZR5n9LEw/ISzMXBRFiJViv+zb+9QWJtBkbDwgxFm5Q==}
     engines: {node: '>=20'}
 
-  '@medusajs/cart@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-LKg5ctHhjOFM5IXa4St0EHC4njDhbFc48zpR9LJTvdTDTToNd3CRQj8tC6sVUS777uOYGA7Mf/XK8pBi/fAbqQ==}
+  '@medusajs/cart@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-UQrdjnKt1TarGiu1WcFk9jNNi+PaZKjqheLp9svgRIszaNjiReljzPB1NU2ts9Pno121Nmy7l5TmiySZwyntvw==}
     engines: {node: '>=20'}
 
-  '@medusajs/core-flows@0.0.10-preview-20240818060534':
-    resolution: {integrity: sha512-0otZPzUJUQbHgyu6JA1x7x77g3DgG/NY2RXcy+6XeUKNYpE8pW1+CZuOpx+rcUh5GE682Lm0oyZ/wlpOZuluZA==}
+  '@medusajs/core-flows@0.0.10-preview-20240818180500':
+    resolution: {integrity: sha512-5Nt/kbf0kLvQwAO1G2wJ2egm8Uh1eoCJj8KtNFvF+f3BRvk5V2Gh8SijV1YHiBtRAVUXdcCK7B8jJIFXMu2DRw==}
     engines: {node: '>=16'}
 
-  '@medusajs/currency@0.1.3-preview-20240818060534':
-    resolution: {integrity: sha512-u0C8ILFRZ/RjV93Z0NE1b5g14esxPMeFw6OOmMDZB89tfta0/LPUcJNxTQBsRQbDTfgcNE8nlhSl95aP8xrzdQ==}
+  '@medusajs/currency@0.1.3-preview-20240818180500':
+    resolution: {integrity: sha512-iltqsd8l6ufXFnLneV0L6pvI3Da/O7KvS+82qBAPqgSpxfZCDw5nMwmAEhJ2SLA/j6AHoMo9klSP22MESLK/xg==}
     engines: {node: '>=20'}
 
-  '@medusajs/customer@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-3PrP889nuZXtREC+YI+HMEnplaawz2GTO0rpi4/ZuC8XQmT6sylpWTw+lRfnqgi1LFDUgsKhftbQGj7ShtBVNw==}
+  '@medusajs/customer@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-ZWxn8JkZAMD4lc7shDEQlMYqxWK2/XAArDow5AfXo4f2OJXBBIP6MsPysJurdoPSxT/USJL2mmI6M5JFC4hf6w==}
     engines: {node: '>=20'}
 
-  '@medusajs/dashboard@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-iVpTSJaRzBZRHGLijzfPgNnVE4DXNgVLLv9a70nm+gsx3m7tltm39OyezneaoMxfeyCzOj2cqUJ9dKI+UghjAw==}
+  '@medusajs/dashboard@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-rc29lYd/A2EvXQ9u7Hsscq0Sg4+P2HdwClvir7zSJnfRgLscs6mSRlSICxzuRRciQ4R7jGP1i8UdpjjrCmt4Rg==}
 
-  '@medusajs/event-bus-local@1.9.9-preview-20240818060534':
-    resolution: {integrity: sha512-QTuMbmfuj4CzRRFQu0h1Ni7LFwBc7M+ZFIWhgUDeHP/WH6s/fHted7XigoMZMxN2E6hgQ1Bfnw+lepg+u2r6fg==}
+  '@medusajs/event-bus-local@1.9.9-preview-20240818180500':
+    resolution: {integrity: sha512-kFbeRVUsXPt8ADysxPvY5TGLw7fp6ijGbGqrJP4KvsGLtEkhURrpwLvpKaPLHXKj6jzSuVq22WRpDHdYzwodlg==}
     engines: {node: '>=20'}
 
-  '@medusajs/file-local-next@0.0.3-preview-20240818060534':
-    resolution: {integrity: sha512-vX1vDkSgaHZkGwwAW8J91fTIfnAW/EU3lAwFnbjl9Adw9hOSqnIWIvWlUaGdERfl23eSUboUKV+cErdCuNRpIQ==}
+  '@medusajs/file-local-next@0.0.3-preview-20240818180500':
+    resolution: {integrity: sha512-aqiGwE30nJVRCFQKpF3CdZDiF/3rmp5Sy1uiQeHnvoTCiMf44w+txkTcBbtacJ+fi/qv6SDGwN07F8eCD60wcw==}
     engines: {node: '>=20'}
 
-  '@medusajs/file@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-Pt/SczQXItHW+0gnXb+lBsDjwq41U/J1ucqeCFFosbrgOUlHYB1nqnuy1TW8Y50bfxoYmiNVzI0d/Peld+kT/Q==}
+  '@medusajs/file@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-TJpFb+TjXzO5s1FAyFqQ+FdAYP/zjqcl4e29GIH2j0dyQBaDOLLGmMlOt6WHpDZvJ7D+S3W4cQSj9Mb2C7WwIA==}
     engines: {node: '>=20'}
 
-  '@medusajs/framework@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-GBU5+LwPlSoL7bmk+fjfQ69gVXTGJ9vr/IU5FHGUfD26JlpGnsIkOkpQvShOinPOmP18f2ommCGA0lob0AbRkQ==}
+  '@medusajs/framework@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-tePhOW0EzjVzAqCNE+14OZgfDP9fiJC8qWL5hDBMLu5mrhexA6rdZ+xFkNua95VeZTsdA5NW9/2Gpbw1O8nl5A==}
     engines: {node: '>=20'}
 
-  '@medusajs/fulfillment-manual@0.0.3-preview-20240818060534':
-    resolution: {integrity: sha512-xvudB/Q5gBvGKAnLCbJx7K3xO8wNrdiayw09wmoZhnmU3t2YHofq7zr1Ftd2EV64dKGUPbo/HvgusAw/P3mJ6g==}
+  '@medusajs/fulfillment-manual@0.0.3-preview-20240818180500':
+    resolution: {integrity: sha512-2ZnCNg3/Qx6LfFieUWiKKpFkuZ8rjZN/DnTBIChGBUl/QQtoTobFbt5N60s9xTg1+zsDk9sZmlKZaV23t0jlEw==}
     engines: {node: '>=20'}
 
-  '@medusajs/fulfillment@0.1.3-preview-20240818060534':
-    resolution: {integrity: sha512-rUv/xQC3B2l+Yk+SAjc2e+vOAlNQrsibJ3QdhHO9evkvfJjTTJBDF/5IxC7QaaQCq+aUm6Km4X8kLMTjotiZeg==}
+  '@medusajs/fulfillment@0.1.3-preview-20240818180500':
+    resolution: {integrity: sha512-JsU7GM6gAkyiPwsUSQbuCNeLQRyNtQQO9c1RHJzGvWg5CBEytLKs6Qdo29WlYG7TJ+7Ptn9Zw3N47PqN3qz8kg==}
     engines: {node: '>=20'}
 
-  '@medusajs/icons@1.2.2-preview-20240818060534':
-    resolution: {integrity: sha512-/79CAfuJJUC9AOMGmzv9O4Evm1sGU0kXfDUKtjdE7lKVjmKw8G3s/qi7EDE/rNZXkqFcWBEY1BLi59opGOxHWg==}
+  '@medusajs/icons@1.2.2-preview-20240818180500':
+    resolution: {integrity: sha512-Uxcgk75rOT1BfbolSvFydwq4W9rVGqiRfdT98W1vWjKZzAsJu7pN03UHO4C4TRoO9FQn4ze6phKL0wV3eWnQfA==}
     peerDependencies:
       react: ^16.x || ^17.x || ^18.x
 
-  '@medusajs/inventory-next@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-O76kLElRU2/HjLzF5rCkxmVaxEW5MVTc4wkgKIuTcPtNXJl8q+mJRtif2MX4UsksR9Kj3HrI/rvG+0E4MAfL+g==}
+  '@medusajs/inventory-next@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-9QwOiOOTjo7izftS+RkPhVbgGN6DsaaOUXBuAWK/bdOiwDjHuKhIDF6//04TlQN/Nudk8n5/nNjenh5uxyqgAw==}
     engines: {node: '>=20'}
 
-  '@medusajs/js-sdk@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-2pI01pStrsmQOucX1YaxZQXUnMtcbBtatAZii2o5VOKlAEQosES5WKVgFgYGskJ9nQhecszQoRmcF1TEGCKHCw==}
+  '@medusajs/js-sdk@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-itT6sRE7ez26dtYL2FGYSU5GHGQz6B1cURllj5O2cdBkWcn1tDt74R8mOx9jQohSqoGakHtlmpfVIihhxpyFtA==}
     engines: {node: '>=18'}
 
-  '@medusajs/link-modules@0.2.12-preview-20240818060534':
-    resolution: {integrity: sha512-ddP1WD6rTDsMRWSx9sFnvosS4M7LzIIiDY0vSTZpmIqkjB5dbRHKi1pqvE1WrJcppdiEMec2R1zILMXSfwJHeg==}
+  '@medusajs/link-modules@0.2.12-preview-20240818180500':
+    resolution: {integrity: sha512-7fQu0izgdBqdKaaDMvCPq8z1wsGAp9n9rh0tLOjM1HJNhnjoLTfZOPqSGGzJPlgjNSPQ7oAgWSqohq2iBs94fQ==}
     engines: {node: '>=20'}
 
-  '@medusajs/medusa-cli@1.3.23-preview-20240818060534':
-    resolution: {integrity: sha512-s6Tas8AFa4vKwFn4Tho9DyW9qtPkcSmlmqd93aSKRjTDIONP8pt2yVl2gSqo3a3sh07V+Qgzg2yIhBHaJn46pQ==}
+  '@medusajs/medusa-cli@1.3.23-preview-20240818180500':
+    resolution: {integrity: sha512-BfZA8Mh25SfffyUtUdb9+3+ZjVE88yq1WduOVyzf55uB7tGNw0poE0RGyMCaxrGoSdz0wV3zEFTGw/D7FCBt0g==}
     engines: {node: '>=16'}
     hasBin: true
 
-  '@medusajs/medusa@1.20.6-preview-20240818060534':
-    resolution: {integrity: sha512-CBs2RfDl5sHC+tYL+ndsC8QTfbCLCBkdL4/CuP7DJ2zG3CZmSoGrWXC5SlXSX6taQyBBtcaIe10QWMoPoobMtw==}
+  '@medusajs/medusa@1.20.6-preview-20240818180500':
+    resolution: {integrity: sha512-VNYjw+Z1ha4dZd4lwJRaRFwsCitSR/TLO7T2tJnrEADx1Fk3O3YsDbtLqsfnzWyFR6YQpLswoNAu/ARHVwTrOw==}
     engines: {node: '>=16'}
 
-  '@medusajs/modules-sdk@1.13.0-preview-20240818060534':
-    resolution: {integrity: sha512-Ux6P3GhS0zJBgKyHD1Ioo8qBtE/6FN7hSAjQ2y73W+p5IB62vAVS43J4OnvhAnSthq1QUNdIc/IGMIHnEdGvrQ==}
+  '@medusajs/modules-sdk@1.13.0-preview-20240818180500':
+    resolution: {integrity: sha512-aBwc+G31ORcXFCjwWqcKXc2XdFzK8eIj6RABz2acS4iGoZVz4FDROmC5QqQEqb0SS6MT5u8euWjfn3duD7ZVgg==}
     engines: {node: '>=16'}
 
-  '@medusajs/notification-local@0.0.2-preview-20240818060534':
-    resolution: {integrity: sha512-bFNXN1B1VXA3gw7RWha6JNVkvoH9X5UUaKC8itbUYLeSRY373hxXAQwT0LClWCeo/PTIf/g0GR5KYtkQwlOU5A==}
+  '@medusajs/notification-local@0.0.2-preview-20240818180500':
+    resolution: {integrity: sha512-fA1kF4zVwuD75PdQ2hrzc7TC7PqA73D/qmpF43huTxnMjGplMpZVYGckfxNjn8kLo7gcX3c6mozZw+jg6Zqobw==}
     engines: {node: '>=20'}
 
-  '@medusajs/notification@0.1.3-preview-20240818060534':
-    resolution: {integrity: sha512-7zttgsvKTcAyFvKtc+1QUkIMGXK+9/1IQV8hvLnYfScFnUnXWxRhv1yfH9QITKHvkSuIbNGn2BLZQIldrKpLzA==}
+  '@medusajs/notification@0.1.3-preview-20240818180500':
+    resolution: {integrity: sha512-3WTl/CEQ+S33Bm56xGSIolRSL+MdOoGI/rVAYNVR8wlt8lavuu97jQ/OMETEw9e1wpfAKfqSQLQH+770TdE3WQ==}
     engines: {node: '>=20'}
 
-  '@medusajs/orchestration@0.5.8-preview-20240818060534':
-    resolution: {integrity: sha512-WsM4dkyV93ADQkd+4OA9mBHIJuq4D8Ar0plbSfbGekt3D+grkljE2VndhHKHBQLNeBuYwkLKbiAKNLSjuVIixw==}
+  '@medusajs/orchestration@0.5.8-preview-20240818180500':
+    resolution: {integrity: sha512-4iXEjF6NBn0DBnFDIRzuIvfEnEYY0AOhpAe+O+7uP7/p05/Rmr9BgW1EXRZirOYdbJqoSAfBQrQirCDZvtCqtw==}
     engines: {node: '>=16'}
 
-  '@medusajs/order@0.1.3-preview-20240818060534':
-    resolution: {integrity: sha512-eSpT1mAZz/ByuKbYtpRtWdKONLIsJgBuzJf9nPYxO22PqBrO8E3EsylnO+pOgCS3JYhrQEIY3hEubHdGNkr+OA==}
+  '@medusajs/order@0.1.3-preview-20240818180500':
+    resolution: {integrity: sha512-vAfwJMI0BFY856BHhkFzIeidsgzE7NG+nhz8HKPz7smY1fqyxIoOPFppZUFmLUmodc7Tfv1cyTgRacovMqb/YQ==}
     engines: {node: '>=20'}
 
-  '@medusajs/payment@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-FojWYISqfdbId3QIAE2P+KuWOqHY1MApC3CJcFAmRR5ACIgZCQmKmdBvgB4aV/n909MJJAWu/mMUW9K4yE4f5g==}
+  '@medusajs/payment@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-3X/fU9cvEqlJM1FReb7mW5aKCi5+17KtJjJbp9OZ8IC4oK7EuMhohwrfH1I7cb/+jPbQfzvKlXyqJYZPLLxZew==}
     engines: {node: '>=20'}
 
-  '@medusajs/pricing@0.1.13-preview-20240818060534':
-    resolution: {integrity: sha512-736XSeNAW3+xayamEUBSXCKBRrO2Z5hXH6sXZf8y+eMxmR6FgycTAa0QHh2Vro0TsVN520g9zqLZWkPQQfvKFg==}
+  '@medusajs/pricing@0.1.13-preview-20240818180500':
+    resolution: {integrity: sha512-+xKhXsd6YwCmvI+y2dGcVLJFoVY6gd++mvJkZ7LoJhtSUMqgjrCoYr5RgvNctVcQ7RmGr6c87t6BhBlO0XR2xQ==}
     engines: {node: '>=20'}
 
-  '@medusajs/product@0.3.13-preview-20240818060534':
-    resolution: {integrity: sha512-iURYWZw5rOKVNY/LfeBmVnyEw7fmvHgCUEZQJixTSfpSqh7Euk2yW4fX2MzTEQWSrZIE7oseew5MXVRrpJyztQ==}
+  '@medusajs/product@0.3.13-preview-20240818180500':
+    resolution: {integrity: sha512-aAkPJe1GuLoNI7rM7CnZMHHiXx7LASgJUzB7lfMP9CPlK60BVNhmiZGWjQuG3d7viQmr3G/8fvrjDIm+bjNg5w==}
     engines: {node: '>=20'}
 
-  '@medusajs/promotion@0.0.5-preview-20240818060534':
-    resolution: {integrity: sha512-HT44FrQl6GnekGgkth7F2nY6x1z3B9wc5HmvVP7NUKJNmROj3f7l/KaNwM6soNUKVfjZK3zaA8bvMRqQS0+Jqw==}
+  '@medusajs/promotion@0.0.5-preview-20240818180500':
+    resolution: {integrity: sha512-vvj3MFNl3RKmC4Y+YzYt0I7196H2XLG83bS9FhbFlDXnwIWwyMibLyE98zXW8nq0c6gGbIGuMsaLe2yJPUqWfg==}
     engines: {node: '>=20'}
 
-  '@medusajs/region@0.1.2-preview-20240818060534':
-    resolution: {integrity: sha512-13enEJiT9T8NSyzmJ/XUROcRm1BWfin14Z3oraNY/hb2TwvyoYcp5lLNnY3hQHoQTqeri0gs9huc/gqoc9WsTw==}
+  '@medusajs/region@0.1.2-preview-20240818180500':
+    resolution: {integrity: sha512-u+PGpih7XAik2HcDi2UxMMvISMvYstkdEDbCzewP1w5izQUpe2WlGVIHHmqpGN1P8vW+AUoHjHIR0gbu/oDAlg==}
     engines: {node: '>=20'}
 
-  '@medusajs/sales-channel@0.1.2-preview-20240818060534':
-    resolution: {integrity: sha512-VtRlbOL2F3ATMscLL57j5GBlD7pZeT0xrFuBI26htfOYY5pSuE7dqJzVf3VJxHBlNiZ5yMbW5u/hvP6y22i8AQ==}
+  '@medusajs/sales-channel@0.1.2-preview-20240818180500':
+    resolution: {integrity: sha512-irwxbgO/LfKC3I9HvgSkHv+3mllwxR6BcNYZA/Xk8RpuKRr5dtewGNlEuIlblgVF692o5tTjc73lTXCqPqq9iA==}
     engines: {node: '>=20'}
 
-  '@medusajs/stock-location-next@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-pmJsrDQ9M9dcCQT7YpkOIjJ5BA14Im2bMT5bPrZiupnqt85M4bPg4dfBWTf95zIp3D6i30EOtywFg2sOAwM1fQ==}
+  '@medusajs/stock-location-next@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-Z/L7Rx+N+sBYGzO550wyjBETQiUU+ZG67/yly/0+Lm6+ULOe4YGZh9nYonl+2fjAPhB+WFxhJ/9IcU7L1ciSyQ==}
     engines: {node: '>=20'}
 
-  '@medusajs/store@0.1.2-preview-20240818060534':
-    resolution: {integrity: sha512-f3a8aIWxhCAmbsJx/t+eQ002Kht/4lRHzUeMhzgWjEOw1qtTyZ6oLazXubMjVMb3NsUBJndGqU7GkwRoftOEQA==}
+  '@medusajs/store@0.1.2-preview-20240818180500':
+    resolution: {integrity: sha512-Wm8UcASn910OgIL16OvuNQrdAUl9c5+iNJM0CGFVOd3kvRFSo4Y337+ojIQxSYShJZn2YpRSdY+VvSBLmajhfA==}
     engines: {node: '>=20'}
 
-  '@medusajs/tax@0.1.2-preview-20240818060534':
-    resolution: {integrity: sha512-JMpCOcI364lTBf3L8rrfCIMbPXv0QlkV8rT53j7tskr+jlQkSrp08CBfWUD21rchn1nl84b7I2GkzmhoZR1pwA==}
+  '@medusajs/tax@0.1.2-preview-20240818180500':
+    resolution: {integrity: sha512-hhu3HuZv+nXRGP9fC4mNqz6EJB9a2TnnxWAAw+mu1O7j39rHJI7pLebLVNfPAW1bHdPOGE+OmjW0/HSQT5gRSw==}
     engines: {node: '>=20'}
 
-  '@medusajs/types@1.12.0-preview-20240818060534':
-    resolution: {integrity: sha512-Va/HeS8WCNv2LQD3FNiCnSZkn01LSDfo7bqqiJmc5sIgR1GF1BN325pkmkGs1ad4GGDL9WXWoraxib2HTRlcvg==}
+  '@medusajs/types@1.12.0-preview-20240818180500':
+    resolution: {integrity: sha512-frnkeZAXnyEmJpwUg8Y29DqsF0yW1AWPdnorHV/PyLYprnWHeWTZFAmfwfCLAJTUVtcXZehE1nWYVzwhM9e1aw==}
     engines: {node: '>=16'}
 
-  '@medusajs/ui@3.0.1-preview-20240818060534':
-    resolution: {integrity: sha512-LemIx4fewZhveXG09S/n6L9JqtHf0/5PHEWs7WbtQbm5wH5cOTr5tvsUGThBvUkXpeQBNrXcxWZHdC/eDwADrQ==}
+  '@medusajs/ui@3.0.1-preview-20240818180500':
+    resolution: {integrity: sha512-yuLJ0xfQqGQfj/d41eZXHaeigzIpO96Km7ICeqcOVZXVxD/N8N2A1LDeH5qnie7eAp1cN5j4fbbOKOZMYHRm9A==}
     peerDependencies:
       react: ^18.0.0
       react-dom: ^18.0.0
 
-  '@medusajs/user@0.0.4-preview-20240818060534':
-    resolution: {integrity: sha512-34zyMWeH2qJG0jQZAIhIv1pllq9Rm4G4jbwiec4Ue0TmJYsCN363Bl68nI1CE+7IG2AfeH6SJMcP+i72nAiJ0A==}
+  '@medusajs/user@0.0.4-preview-20240818180500':
+    resolution: {integrity: sha512-gUEvDt/BJEk2utat+Rt0VqILiu71h7RGwnSXi4dwOqB1Vw44T2RusEhzBUiHqWCr5/CJuwEzGol83gyZDJZwxg==}
     engines: {node: '>=20'}
 
-  '@medusajs/utils@1.12.0-preview-20240818060534':
-    resolution: {integrity: sha512-661K/pN9UuINHfLWZcwkMZkpvDXuV2RSUJa4PI2zr9VuisuCFWOiG0+xTPjLzZjEE/+h1fIuQGp2AznDcSDYAw==}
+  '@medusajs/utils@1.12.0-preview-20240818180500':
+    resolution: {integrity: sha512-LTlyKD1CMr4VuO8Bb/2mUlC+e3xILN+BNu5wRfx8/zOMiTlBbdc5bMUcvDOpsQu7ey7R4aH2/YnnFtqSvO0Bxg==}
     engines: {node: '>=16'}
 
-  '@medusajs/workflow-engine-inmemory@0.0.5-preview-20240818060534':
-    resolution: {integrity: sha512-OrnqmMcrAJRUL9ElJbmaCADXn8eskvO4sQXOyVqmjrxy5OQbgVO1nCIBbmhBRRh0bGPbl6PQDWUKrvii1Fuypg==}
+  '@medusajs/workflow-engine-inmemory@0.0.5-preview-20240818180500':
+    resolution: {integrity: sha512-ovczCdoN4jzx3snywHxGpMtEBJ8xOoY6IE2i9qHBjGE8Z1V0htwsuKC+F2ClZt/uRW008yU1z1TQfETASXH1Dg==}
     engines: {node: '>=20'}
 
-  '@medusajs/workflows-sdk@0.1.7-preview-20240818060534':
-    resolution: {integrity: sha512-Rbk8O8j4bFwqOwJaXhMU7XaWBQqL23gBIskocZfEi8oWAEa8Jw45xNP8d0rGTgooaAWCFOBQqIjDm7hXN/MQyw==}
+  '@medusajs/workflows-sdk@0.1.7-preview-20240818180500':
+    resolution: {integrity: sha512-4AU0I8qXMiBMDkroyjE7zI2ieF2aPOgq8bJpxIEB1zYRNwJ4ajZr8TCyNKTYfTgKJdc4h0Jyc3dLHHNTI1GE7A==}
     engines: {node: '>=16'}
 
   '@mikro-orm/cli@5.9.7':
@@ -4604,8 +4660,8 @@ packages:
     resolution: {integrity: sha512-dq+qelQ9akHpcOl/gUVRTxVIOkAJ1wR3QAvb4RsVjS8oVoFjDGTc679wJYmUmknUF5HwMLOgb5O+a3KxfWapPQ==}
     engines: {node: '>= 0.6'}
 
-  medusa-telemetry@0.0.18-preview-20240818060534:
-    resolution: {integrity: sha512-tbXjERcLivGa3xrq+ffaYVxlOnztbYiM8+Mc+/jX9X0vvnFkjeD/YwkKiLpAGUVltPXKoDq/9YKSXq0vGpxrfA==}
+  medusa-telemetry@0.0.18-preview-20240818180500:
+    resolution: {integrity: sha512-fYj/7RFiHsK8kUwhceZnqhuKkod2BR04XiGoxzk/Dwe7mgbPdaEFaV/dd32CGuxpnIEMDRfHztiXlft73Hs/Tw==}
     engines: {node: '>=16'}
 
   merge-descriptors@1.0.1:
@@ -6585,6 +6641,41 @@ snapshots:
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
 
+  '@biomejs/biome@1.8.3':
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.8.3
+      '@biomejs/cli-darwin-x64': 1.8.3
+      '@biomejs/cli-linux-arm64': 1.8.3
+      '@biomejs/cli-linux-arm64-musl': 1.8.3
+      '@biomejs/cli-linux-x64': 1.8.3
+      '@biomejs/cli-linux-x64-musl': 1.8.3
+      '@biomejs/cli-win32-arm64': 1.8.3
+      '@biomejs/cli-win32-x64': 1.8.3
+
+  '@biomejs/cli-darwin-arm64@1.8.3':
+    optional: true
+
+  '@biomejs/cli-darwin-x64@1.8.3':
+    optional: true
+
+  '@biomejs/cli-linux-arm64-musl@1.8.3':
+    optional: true
+
+  '@biomejs/cli-linux-arm64@1.8.3':
+    optional: true
+
+  '@biomejs/cli-linux-x64-musl@1.8.3':
+    optional: true
+
+  '@biomejs/cli-linux-x64@1.8.3':
+    optional: true
+
+  '@biomejs/cli-win32-arm64@1.8.3':
+    optional: true
+
+  '@biomejs/cli-win32-x64@1.8.3':
+    optional: true
+
   '@colors/colors@1.6.0': {}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -6973,11 +7064,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@medusajs/admin-sdk@0.0.2-preview-20240818060534(@babel/runtime@7.25.0)(@types/node@17.0.45)(@types/react@18.3.3)(express@4.19.2)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)':
+  '@medusajs/admin-sdk@0.0.2-preview-20240818180500(@babel/runtime@7.25.0)(@types/node@17.0.45)(@types/react@18.3.3)(express@4.19.2)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)':
     dependencies:
-      '@medusajs/admin-shared': 0.0.2-preview-20240818060534
-      '@medusajs/admin-vite-plugin': 0.0.2-preview-20240818060534(vite@5.4.1(@types/node@17.0.45))
-      '@medusajs/dashboard': 0.0.2-preview-20240818060534(@babel/runtime@7.25.0)(@types/react@18.3.3)(typescript@5.5.4)
+      '@medusajs/admin-shared': 0.0.2-preview-20240818180500
+      '@medusajs/admin-vite-plugin': 0.0.2-preview-20240818180500(vite@5.4.1(@types/node@17.0.45))
+      '@medusajs/dashboard': 0.0.2-preview-20240818180500(@babel/runtime@7.25.0)(@types/react@18.3.3)(typescript@5.5.4)
       '@vitejs/plugin-react': 4.3.1(vite@5.4.1(@types/node@17.0.45))
       autoprefixer: 10.4.20(postcss@8.4.41)
       compression: 1.7.4
@@ -7006,13 +7097,13 @@ snapshots:
       - ts-node
       - typescript
 
-  '@medusajs/admin-shared@0.0.2-preview-20240818060534': {}
+  '@medusajs/admin-shared@0.0.2-preview-20240818180500': {}
 
-  '@medusajs/admin-vite-plugin@0.0.2-preview-20240818060534(vite@5.4.1(@types/node@17.0.45))':
+  '@medusajs/admin-vite-plugin@0.0.2-preview-20240818180500(vite@5.4.1(@types/node@17.0.45))':
     dependencies:
       '@babel/parser': 7.23.5
       '@babel/traverse': 7.23.5
-      '@medusajs/admin-shared': 0.0.2-preview-20240818060534
+      '@medusajs/admin-shared': 0.0.2-preview-20240818180500
       chokidar: 3.5.3
       fdir: 6.1.1
       magic-string: 0.30.5
@@ -7021,9 +7112,9 @@ snapshots:
       - picomatch
       - supports-color
 
-  '@medusajs/api-key@0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/api-key@0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7048,9 +7139,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/auth-emailpass@0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/auth-emailpass@0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       scrypt-kdf: 2.0.1
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
@@ -7072,10 +7163,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/auth@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/auth@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7103,10 +7194,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/cache-inmemory@1.8.11-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/cache-inmemory@1.8.11-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
       - '@mikro-orm/entity-generator'
@@ -7127,9 +7218,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/cart@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/cart@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7154,12 +7245,12 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/core-flows@0.0.10-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/core-flows@0.0.10-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       awilix: 8.0.1
       ulid: 2.3.0
     transitivePeerDependencies:
@@ -7182,9 +7273,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/currency@0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/currency@0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7209,10 +7300,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/customer@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/customer@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7237,15 +7328,15 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/dashboard@0.0.2-preview-20240818060534(@babel/runtime@7.25.0)(@types/react@18.3.3)(typescript@5.5.4)':
+  '@medusajs/dashboard@0.0.2-preview-20240818180500(@babel/runtime@7.25.0)(@types/react@18.3.3)(typescript@5.5.4)':
     dependencies:
       '@ariakit/react': 0.4.8(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@dnd-kit/core': 6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@dnd-kit/sortable': 8.0.0(@dnd-kit/core@6.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers': 3.4.2(react-hook-form@7.49.1(react@18.3.1))
-      '@medusajs/icons': 1.2.2-preview-20240818060534(react@18.3.1)
-      '@medusajs/js-sdk': 0.0.2-preview-20240818060534
-      '@medusajs/ui': 3.0.1-preview-20240818060534(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
+      '@medusajs/icons': 1.2.2-preview-20240818180500(react@18.3.1)
+      '@medusajs/js-sdk': 0.0.2-preview-20240818180500
+      '@medusajs/ui': 3.0.1-preview-20240818180500(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)
       '@radix-ui/react-collapsible': 1.1.0(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@tanstack/react-query': 5.51.23(react@18.3.1)
       '@tanstack/react-table': 8.10.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7281,10 +7372,10 @@ snapshots:
       - react-native
       - typescript
 
-  '@medusajs/event-bus-local@1.9.9-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/event-bus-local@1.9.9-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       ulid: 2.3.0
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
@@ -7306,9 +7397,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/file-local-next@0.0.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/file-local-next@0.0.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
       - '@mikro-orm/entity-generator'
@@ -7329,10 +7420,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/file@0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/file@0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7357,13 +7448,13 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/framework@0.0.2-preview-20240818060534(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/framework@0.0.2-preview-20240818180500(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/medusa-cli': 1.3.23-preview-20240818060534(@types/node@17.0.45)
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/medusa-cli': 1.3.23-preview-20240818180500(@types/node@17.0.45)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       awilix: 8.0.1
       cookie-parser: 1.4.6
       cors: 2.8.5
@@ -7372,7 +7463,7 @@ snapshots:
       ioredis: 5.4.1
       ioredis-mock: 8.4.0(@types/ioredis-mock@8.2.5)(ioredis@5.4.1)
       jsonwebtoken: 9.0.2
-      medusa-telemetry: 0.0.18-preview-20240818060534
+      medusa-telemetry: 0.0.18-preview-20240818180500
       morgan: 1.10.0
       zod: 3.22.4
     transitivePeerDependencies:
@@ -7397,9 +7488,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/fulfillment-manual@0.0.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/fulfillment-manual@0.0.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       body-parser: 1.20.2
       express: 4.19.2
     transitivePeerDependencies:
@@ -7422,11 +7513,11 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/fulfillment@0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/fulfillment@0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/types': 1.12.0-preview-20240818060534
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/types': 1.12.0-preview-20240818180500
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7451,14 +7542,14 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/icons@1.2.2-preview-20240818060534(react@18.3.1)':
+  '@medusajs/icons@1.2.2-preview-20240818180500(react@18.3.1)':
     dependencies:
       react: 18.3.1
 
-  '@medusajs/inventory-next@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/inventory-next@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7483,14 +7574,14 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/js-sdk@0.0.2-preview-20240818060534':
+  '@medusajs/js-sdk@0.0.2-preview-20240818180500':
     dependencies:
       qs: 6.13.0
 
-  '@medusajs/link-modules@0.2.12-preview-20240818060534(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/link-modules@0.2.12-preview-20240818180500(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))
       awilix: 8.0.1
@@ -7515,9 +7606,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/medusa-cli@1.3.23-preview-20240818060534(@types/node@17.0.45)':
+  '@medusajs/medusa-cli@1.3.23-preview-20240818180500(@types/node@17.0.45)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.12.0)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.12.0)
       axios: 0.21.4
       chalk: 4.1.2
       configstore: 5.0.1
@@ -7531,7 +7622,7 @@ snapshots:
       inquirer: 8.2.6
       is-valid-path: 0.1.1
       meant: 1.0.3
-      medusa-telemetry: 0.0.18-preview-20240818060534
+      medusa-telemetry: 0.0.18-preview-20240818180500
       open: 8.4.2
       ora: 5.4.1
       pg: 8.12.0
@@ -7564,18 +7655,18 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/medusa@1.20.6-preview-20240818060534(@babel/runtime@7.25.0)(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(@types/react@18.3.3)(pg@8.11.3)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)':
+  '@medusajs/medusa@1.20.6-preview-20240818180500(@babel/runtime@7.25.0)(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(@types/react@18.3.3)(pg@8.11.3)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)':
     dependencies:
       '@inquirer/checkbox': 2.4.7
-      '@medusajs/admin-sdk': 0.0.2-preview-20240818060534(@babel/runtime@7.25.0)(@types/node@17.0.45)(@types/react@18.3.3)(express@4.19.2)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)
-      '@medusajs/core-flows': 0.0.10-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/framework': 0.0.2-preview-20240818060534(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/link-modules': 0.2.12-preview-20240818060534(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/medusa-cli': 1.3.23-preview-20240818060534(@types/node@17.0.45)
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/admin-sdk': 0.0.2-preview-20240818180500(@babel/runtime@7.25.0)(@types/node@17.0.45)(@types/react@18.3.3)(express@4.19.2)(react-dom@18.3.1(react@18.3.1))(ts-node@10.9.2(@swc/core@1.5.7(@swc/helpers@0.5.12))(@types/node@17.0.45)(typescript@5.5.4))(typescript@5.5.4)
+      '@medusajs/core-flows': 0.0.10-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/framework': 0.0.2-preview-20240818180500(@types/ioredis-mock@8.2.5)(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/link-modules': 0.2.12-preview-20240818180500(@mikro-orm/migrations@5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3))(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/medusa-cli': 1.3.23-preview-20240818180500(@types/node@17.0.45)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@swc/core': 1.5.7(@swc/helpers@0.5.12)
       '@swc/helpers': 0.5.12
       awilix: 8.0.1
@@ -7596,7 +7687,7 @@ snapshots:
       ioredis: 5.4.1
       ioredis-mock: 8.4.0(@types/ioredis-mock@8.2.5)(ioredis@5.4.1)
       lodash: 4.17.21
-      medusa-telemetry: 0.0.18-preview-20240818060534
+      medusa-telemetry: 0.0.18-preview-20240818180500
       morgan: 1.10.0
       multer: 1.4.5-lts.1
       node-schedule: 2.1.1
@@ -7650,12 +7741,12 @@ snapshots:
       - ts-node
       - typescript
 
-  '@medusajs/modules-sdk@1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/modules-sdk@1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
       '@graphql-tools/merge': 9.0.6(graphql@16.9.0)
       '@graphql-tools/schema': 10.0.6(graphql@16.9.0)
-      '@medusajs/orchestration': 0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       awilix: 8.0.1
       graphql: 16.9.0
       knex: 2.4.2(pg@8.11.3)
@@ -7680,9 +7771,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/notification-local@0.0.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/notification-local@0.0.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
     transitivePeerDependencies:
       - '@mikro-orm/better-sqlite'
       - '@mikro-orm/entity-generator'
@@ -7703,10 +7794,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/notification@0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/notification@0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7731,10 +7822,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/orchestration@0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/orchestration@0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/types': 1.12.0-preview-20240818060534
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/types': 1.12.0-preview-20240818180500
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       awilix: 8.0.1
       graphql: 16.9.0
     transitivePeerDependencies:
@@ -7757,9 +7848,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/order@0.1.3-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/order@0.1.3-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7784,10 +7875,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/payment@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/payment@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7813,9 +7904,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/pricing@0.1.13-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/pricing@0.1.13-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7840,9 +7931,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/product@0.3.13-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/product@0.3.13-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7867,9 +7958,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/promotion@0.0.5-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/promotion@0.0.5-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7894,9 +7985,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/region@0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/region@0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7921,9 +8012,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/sales-channel@0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/sales-channel@0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7948,10 +8039,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/stock-location-next@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/stock-location-next@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -7976,9 +8067,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/store@0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/store@0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8003,10 +8094,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/tax@0.1.2-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/tax@0.1.2-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8031,11 +8122,11 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/types@1.12.0-preview-20240818060534': {}
+  '@medusajs/types@1.12.0-preview-20240818180500': {}
 
-  '@medusajs/ui@3.0.1-preview-20240818060534(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
+  '@medusajs/ui@3.0.1-preview-20240818180500(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.5.4)':
     dependencies:
-      '@medusajs/icons': 1.2.2-preview-20240818060534(react@18.3.1)
+      '@medusajs/icons': 1.2.2-preview-20240818180500(react@18.3.1)
       '@radix-ui/react-accordion': 1.2.0(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-alert-dialog': 1.1.1(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@radix-ui/react-avatar': 1.1.0(@types/react@18.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -8070,9 +8161,9 @@ snapshots:
       - '@types/react-dom'
       - typescript
 
-  '@medusajs/user@0.0.4-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/user@0.0.4-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8098,9 +8189,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/utils@1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/utils@1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/types': 1.12.0-preview-20240818060534
+      '@medusajs/types': 1.12.0-preview-20240818180500
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8132,9 +8223,9 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/utils@1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.12.0)':
+  '@medusajs/utils@1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.12.0)':
     dependencies:
-      '@medusajs/types': 1.12.0-preview-20240818060534
+      '@medusajs/types': 1.12.0-preview-20240818180500
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.12.0)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8166,10 +8257,10 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/workflow-engine-inmemory@0.0.5-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/workflow-engine-inmemory@0.0.5-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/workflows-sdk': 0.1.7-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/workflows-sdk': 0.1.7-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/core': 5.9.7(@mikro-orm/migrations@5.9.7)(@mikro-orm/postgresql@5.9.7)
       '@mikro-orm/migrations': 5.9.7(@mikro-orm/core@5.9.7)(@types/node@17.0.45)(pg@8.11.3)
       '@mikro-orm/postgresql': 5.9.7(@mikro-orm/core@5.9.7)(@mikro-orm/migrations@5.9.7)
@@ -8195,11 +8286,11 @@ snapshots:
       - supports-color
       - tedious
 
-  '@medusajs/workflows-sdk@0.1.7-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)':
+  '@medusajs/workflows-sdk@0.1.7-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)':
     dependencies:
-      '@medusajs/modules-sdk': 1.13.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/orchestration': 0.5.8-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
-      '@medusajs/utils': 1.12.0-preview-20240818060534(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/modules-sdk': 1.13.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/orchestration': 0.5.8-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
+      '@medusajs/utils': 1.12.0-preview-20240818180500(@types/node@17.0.45)(pg@8.11.3)
       awilix: 8.0.1
       ulid: 2.3.0
     transitivePeerDependencies:
@@ -12658,7 +12749,7 @@ snapshots:
 
   media-typer@0.3.0: {}
 
-  medusa-telemetry@0.0.18-preview-20240818060534:
+  medusa-telemetry@0.0.18-preview-20240818180500:
     dependencies:
       '@babel/runtime': 7.25.0
       axios: 0.21.4
