@@ -1,4 +1,4 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
+import type { MedusaRequest, MedusaResponse } from "@medusajs/medusa";
 
 export async function GET(
   req: MedusaRequest,
