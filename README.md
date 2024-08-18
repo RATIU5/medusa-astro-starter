@@ -40,13 +40,7 @@ Follow these steps to set up and run the project:
 
 2. **Install dependencies**
 
-   This project uses pnpm as the package manager. If you don't have pnpm installed, you can install it globally:
-
-   ```
-   npm install -g pnpm
-   ```
-
-   Then, install the project dependencies:
+   Install the project dependencies:
 
    ```
    pnpm install
@@ -68,7 +62,19 @@ Follow these steps to set up and run the project:
    pnpm db:start
    ```
 
-5. **Start the development server**
+5. **Run the database migrations**
+
+   ```
+   pnpm db:migrate
+   ```
+
+6. **Create the admin user**
+
+   ```
+   pnpm db:admin
+   ```
+
+7. **Start the development server**
 
    ```
    pnpm dev

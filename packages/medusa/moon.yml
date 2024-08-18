@@ -1,0 +1,5 @@
+tasks:
+  dev:
+    command: pnpm dev
+  migrate:
+    command: medusa migrations run

@@ -306,6 +306,8 @@ Examples of valid names:
     "pnpm-workspace.yaml",
     "yarn.lock",
     "tsconfig.json",
+    "run.mjs",
+    ".env.example",
   ];
   const dirsToIgnore = [
     "node_modules",

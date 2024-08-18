@@ -12,6 +12,7 @@
     "db:clean": "node ./scripts/run.mjs clean",
     "db:clean:preserve": "node ./scripts/run.mjs clean --preserve-db",
     "db:clean:all": "node ./scripts/run.mjs clean:all",
+    "db:migrate": "pnpm moon run medusa:migrate",
     "format": "pnpm moon run :format",
     "check": "pnpm moon run :check",
     "lint": "pnpm moon run :lint",
