@@ -1,5 +1,5 @@
 {
-  "name": "changename",
+  "name": "changemename",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -8,6 +8,9 @@
     "run:setup": "node ./scripts/run.mjs setup",
     "db:start": "docker compose up -d",
     "db:stop": "docker compose down -v",
+    "db:clean": "node ./scripts/run.mjs clean",
+    "db:clean:preserve": "node ./scripts/run.mjs clean --preserve-db",
+    "db:clean:all": "node ./scripts/run.mjs clean:all",
     "format": "pnpm moon run :format",
     "check": "pnpm moon run :check",
     "lint": "pnpm moon run :lint"

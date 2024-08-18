@@ -2,6 +2,15 @@ import { spawn } from "node:child_process";
 import { resolve, join, relative } from "node:path";
 import fs from "node:fs";
 import crypto from "node:crypto";
+import readline from "node:readline/promises";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout,
+});
 
 /**
  * Run a command and return the output
@@ -35,6 +44,37 @@ const run = async (command, ...args) => {
     });
   });
 };
+
+/**
+ * Get Docker volumes
+ * @param {string} [prefix=''] - Optional prefix for volume names
+ * @returns {Promise<string[]>} List of volume names
+ */
+async function getVolumes(prefix = "") {
+  const cmd = prefix
+    ? `docker volume ls -q -f name=${prefix}_`
+    : "docker volume ls -q";
+  const output = await run(cmd);
+  return output.trim().split("\n").filter(Boolean);
+}
+
+/**
+ * Get project-specific Docker images
+ * @param {string} projectName - The project name
+ * @returns {Promise<string[]>} List of image names
+ */
+async function getProjectImages(projectName) {
+  const output = await run(
+    "docker",
+    "images",
+    "--format",
+    "{{.Repository}}:{{.Tag}}"
+  );
+  return output
+    .trim()
+    .split("\n")
+    .filter((img) => img.startsWith(projectName));
+}
 
 /**
  * Generate a random secret that is 32 bytes long
@@ -301,6 +341,93 @@ Examples of valid names:
   console.log("project setup complete");
 }
 
+/**
+ * Clean up containers, volumes, and images (development)
+ * @param {boolean} preserveDb - Whether to preserve the database volume
+ */
+async function clean(preserveDb = false) {
+  const ans = await rl.question(
+    "Are you sure you want to remove project-related containers, images, and volumes? [y/N] "
+  );
+
+  if (ans.toLowerCase() === "y") {
+    try {
+      // Stop and remove containers
+      await run("docker", "compose", "down", "--remove-orphans");
+
+      // Identify the postgres volume
+      const composeProjectName = process.env.COMPOSE_PROJECT_NAME;
+      const postgresVolume = `${composeProjectName}_postgres_data`;
+
+      // Remove volumes
+      if (preserveDb) {
+        console.log(
+          `preserving PostgreSQL volume (${postgresVolume}) and removing other volumes`
+        );
+        const volumes = await getVolumes();
+        const volumesToRemove = volumes.filter((v) => v !== postgresVolume);
+        if (volumesToRemove.length > 0) {
+          await run("docker", "volume", "rm", ...volumesToRemove);
+        }
+      } else {
+        console.log("removing all volumes");
+        const volumes = await getVolumes();
+        if (volumes.length > 0) {
+          await run("docker", "volume", "rm", ...volumes);
+        }
+      }
+
+      // Remove all project-specific images
+      console.log("removing all project-specific images");
+      const images = await getProjectImages(composeProjectName);
+      if (images.length > 0) {
+        await run("docker", "rmi", ...images);
+      }
+
+      console.log("cleanup completed");
+    } catch (error) {
+      console.error("error during cleanup:", error);
+    } finally {
+      rl.close(); // Close the readline interface
+    }
+  }
+}
+
+/**
+ * Clean up everything (including all volumes)
+ */
+async function cleanAll() {
+  const ans = await rl.question(
+    "This will remove ALL containers, images, and volumes. Are you really sure? [y/N] "
+  );
+
+  if (ans.toLowerCase() === "y") {
+    try {
+      await run("docker", "compose", "down", "-v", "--rmi", "all");
+      await run("docker", "container", "prune", "-f");
+
+      const composeProjectName = process.env.COMPOSE_PROJECT_NAME;
+      const projectVolumes = await getVolumes(composeProjectName);
+      if (projectVolumes.length > 0) {
+        await run("docker", "volume", "rm", ...projectVolumes);
+      }
+
+      const allVolumes = await getVolumes();
+      if (allVolumes.length > 0) {
+        await run("docker", "volume", "rm", ...allVolumes);
+      }
+
+      await run("docker", "system", "prune", "-af", "--volumes");
+
+      console.log("full cleanup completed");
+    } catch (error) {
+      console.error("error during full cleanup:", error);
+    } finally {
+      rl.close(); // Close the readline interface
+    }
+  }
+}
+
 const main = async () => {
   const args = process.argv.slice(2);
 
@@ -309,26 +436,39 @@ const main = async () => {
     process.exit(1);
   }
 
-  const command = args[0];
-  switch (command) {
-    case "help":
-      showHelp();
-      break;
-    case "check":
-      await checkToolVersions();
-      break;
-    case "setup": {
-      const newProjectName = args[1];
-      if (!newProjectName) {
-        console.error("error: no project name provided\n");
-        process.exit(1);
+  try {
+    const command = args[0];
+    switch (command) {
+      case "help":
+        showHelp();
+        break;
+      case "check":
+        await checkToolVersions();
+        break;
+      case "setup": {
+        const newProjectName = args[1];
+        if (!newProjectName) {
+          console.error("error: no project name provided\n");
+          process.exit(1);
+        }
+        await firstSetup(newProjectName);
+        break;
       }
-      await firstSetup(newProjectName);
-      break;
+      case "clean":
+        await clean(args[1] === "--preserve-db");
+        break;
+      case "clean:all":
+        await cleanAll();
+        break;
+      default:
+        console.error(`error: unknown command: ${command}`);
+        process.exit(1);
     }
-    default:
-      console.error(`error: unknown command: ${command}`);
-      process.exit(1);
+  } catch (error) {
+    console.error("error:", error);
+    process.exit(1);
+  } finally {
+    process.exit(0);
   }
 };
 
