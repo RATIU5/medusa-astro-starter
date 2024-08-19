@@ -295,7 +295,7 @@ fi
 # Ensure OrbStack is running
 if command_exists orb && ! orb info &> /dev/null; then
     orb
-else command_exists docker && ! docker info &> /dev/null; then
+elif command_exists docker && ! docker info &> /dev/null; then
     open -a Docker
 fi
 
