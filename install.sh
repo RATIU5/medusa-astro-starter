@@ -323,4 +323,11 @@ cd packages || exit
 # Create a new Astro project
 pnpm create astro@latest storefront --no-git --skip-houston --install --typescript strictest --template minimal
 
-pnpm dlx create-medusa-app@preview --no-browser --db-url postgres://postgres:postgres@localhost:5433/medusa
+pnpm dlx create-medusa-app@preview medusa --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa
+
+cd ../..
+
+echo "Project setup complete."
+echo "To start the development server, run the following commands:"
+echo "  cd $PROJECT_NAME"
+echo "  pnpm dev"
