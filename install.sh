@@ -330,18 +330,15 @@ run_and_capture_last() {
     local output=""
     local last_lines=""
     while IFS= read -r line; do
-        echo "$line"  # Display the line in real-time
+        echo "$line"
         output="$output$line\n"
-        # Keep only the last 20 lines (adjust this number as needed)
         last_lines=$(echo -e "$output" | tail -n 20)
     done < <(pnpm dlx create-medusa-app@preview --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa)
     echo -e "$last_lines" > last_output.log
 }
 
-# Run the command and capture the last part of the output
 run_and_capture_last
 
-# Extract the URL starting with http://localhost:
 url=$(grep -o 'http://localhost:[0-9]*/invite?token=[^&]*&first_run=true' last_output.log)
 
 if [ -z "$url" ]; then
@@ -349,10 +346,8 @@ if [ -z "$url" ]; then
     exit 1
 fi
 
-# Extract the token from the URL
 token=$(echo "$url" | sed -E 's/.*token=([^&]+).*/\1/')
 
-# Construct the new URL
 newUrl="http://localhost:9000/app/invite?token=$token&first_run=true"
 
 rm last_output.log
