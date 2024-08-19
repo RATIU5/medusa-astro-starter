@@ -326,19 +326,36 @@ cd packages || exit
 # Create a new Astro project
 pnpm create astro@latest storefront --no-git --skip-houston --install --typescript strictest --template minimal
 
-output=$(pnpm dlx create-medusa-app@preview medusa --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa)
+run_and_capture_last() {
+    local output=""
+    local last_lines=""
+    while IFS= read -r line; do
+        echo "$line"  # Display the line in real-time
+        output="$output$line\n"
+        # Keep only the last 20 lines (adjust this number as needed)
+        last_lines=$(echo -e "$output" | tail -n 20)
+    done < <(pnpm dlx create-medusa-app@preview --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa)
+    echo -e "$last_lines" > last_output.log
+}
+
+# Run the command and capture the last part of the output
+run_and_capture_last
 
 # Extract the URL starting with http://localhost:
-url=$(echo "$output" | grep -oP 'http://localhost:[0-9]+/invite\?token=[^&]+&first_run=true')
+url=$(grep -o 'http://localhost:[0-9]*/invite?token=[^&]*&first_run=true' last_output.log)
 
 if [ -z "$url" ]; then
     echo "URL not found in the output"
     exit 1
 fi
 
+# Extract the token from the URL
 token=$(echo "$url" | sed -E 's/.*token=([^&]+).*/\1/')
 
+# Construct the new URL
 newUrl="http://localhost:9000/app/invite?token=$token&first_run=true"
+
+rm last_output.log
 
 cd ../..
 
