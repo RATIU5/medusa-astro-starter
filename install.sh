@@ -323,4 +323,4 @@ cd packages || exit
 # Create a new Astro project
 pnpm create astro@latest storefront --no-git --skip-houston --install --typescript strictest --template minimal
 
-pnpm dlx create-medusa-app@latest --no-browser --db-url postgres://postgres:postgres@localhost:5433/medusa --directory-path medusa
+pnpm dlx create-medusa-app@preview --no-browser --skip-db
