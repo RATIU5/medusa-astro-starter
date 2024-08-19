@@ -1,7 +1,0 @@
-tasks:
-  check:
-    command: "pnpm biome check --write ."
-  format:
-    command: "pnpm biome format --write ."
-  lint:
-    command: "pnpm biome lint --write ."
