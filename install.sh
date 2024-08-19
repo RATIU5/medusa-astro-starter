@@ -292,6 +292,13 @@ if [ -d "$PROJECT_NAME" ]; then
     exit 1
 fi
 
+# Ensure OrbStack is running
+if command_exists orb && ! orb info &> /dev/null; then
+    orb
+else command_exists docker && ! docker info &> /dev/null; then
+    open -a Docker
+fi
+
 # Clone the repository template to a new directory with the project name
 git clone --branch v3 https://github.com/RATIU5/medusa-astro-starter.git "$PROJECT_NAME"
 
