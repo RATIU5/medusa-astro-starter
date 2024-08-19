@@ -6,8 +6,8 @@ tasks:
   lint:
     command: "pnpm biome lint --write ."
   dev:
-    command: "pnpm biome dev"
+    command: "pnpm dev"
   build:
-    command: "pnpm biome build"
+    command: "pnpm build"
   start:
-    command: "pnpm biome start"
+    command: "pnpm start"

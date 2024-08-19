@@ -326,7 +326,19 @@ cd packages || exit
 # Create a new Astro project
 pnpm create astro@latest storefront --no-git --skip-houston --install --typescript strictest --template minimal
 
-pnpm dlx create-medusa-app@preview medusa --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa
+output=$(pnpm dlx create-medusa-app@preview medusa --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa)
+
+# Extract the URL starting with http://localhost:
+url=$(echo "$output" | grep -oP 'http://localhost:[0-9]+/invite\?token=[^&]+&first_run=true')
+
+if [ -z "$url" ]; then
+    echo "URL not found in the output"
+    exit 1
+fi
+
+token=$(echo "$url" | sed -E 's/.*token=([^&]+).*/\1/')
+
+newUrl="http://localhost:9000/app/invite?token=$token&first_run=true"
 
 cd ../..
 
@@ -334,3 +346,5 @@ echo "Project setup complete."
 echo "To start the development server, run the following commands:"
 echo "  cd $PROJECT_NAME"
 echo "  pnpm dev"
+echo "To create the first user, navigate to:"
+echo "  $newUrl"
