@@ -317,6 +317,9 @@ git init
 # Install the database with Docker Compose
 docker compose up -d
 
+# Install dependencies
+pnpm install
+
 # Change directory to the packages directory
 cd packages || exit
 

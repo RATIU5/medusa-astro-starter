@@ -1,0 +1,13 @@
+tasks:
+  check:
+    command: "pnpm biome check --write ."
+  format:
+    command: "pnpm biome format --write ."
+  lint:
+    command: "pnpm biome lint --write ."
+  dev:
+    command: "pnpm biome dev"
+  build:
+    command: "pnpm biome build"
+  start:
+    command: "pnpm biome start"
