@@ -285,10 +285,16 @@ if ! eval $node_and_pnpm_installed; then
 fi
 
 echo "All required software is installed."
-echo "Creating a new project directory..."
+
+# Determine if the project directory already exists
+if [ -d "$PROJECT_NAME" ]; then
+    echo "Directory $PROJECT_NAME already exists. Please choose a different project name."
+    exit 1
+fi
 
 # Clone the repository template to a new directory with the project name
 git clone --branch v3 https://github.com/RATIU5/medusa-astro-starter.git "$PROJECT_NAME"
+
 
 # Change to the project directory
 cd "$PROJECT_NAME" || exit
@@ -298,3 +304,23 @@ rm -rf .git
 
 # Remove the install script
 rm install.sh
+
+# Copy the .env.example file to .env
+cp .env.example .env
+
+# Iterate through all files and replace all instances of "changemename" with the project name
+find . -type f -exec sed -i '' -e "s/changemename/$PROJECT_NAME/g" {} \;
+
+# Initialize a new git repository
+git init
+
+# Install the database with Docker Compose
+docker compose up -d
+
+# Change directory to the packages directory
+cd packages || exit
+
+# Create a new Astro project
+pnpm create astro@latest storefront --no-git --skip-houston --install --typescript strictest --template minimal
+
+pnpm dlx create-medusa-app@latest --no-browser --db-url postgres://postgres:postgres@localhost:5432/medusa --directory-path medusa
